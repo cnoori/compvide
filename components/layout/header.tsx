@@ -23,9 +23,9 @@ const platformItems = [
     description: "Functional assays spanning all three activation pathways",
   },
   {
-    title: "CIMED Diagnostics",
-    href: "/platform#cimed",
-    description: "Proprietary diagnostic platform for complement monitoring",
+    title: "CIMED Diagnostic Platform",
+    href: "/cimed",
+    description: "Pathway-specific ELISA kits for complement monitoring and drug development",
   },
   {
     title: "Scientific Services",
@@ -65,25 +65,25 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex lg:items-center lg:gap-1">
-          <NavigationMenu>
+          <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent">
                   Platform
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                  <ul className="grid w-[400px] gap-1 p-2 md:w-[480px] md:grid-cols-2">
                     {platformItems.map((item) => (
                       <li key={item.title}>
                         <NavigationMenuLink asChild>
                           <Link
                             href={item.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted"
                           >
                             <div className="text-sm font-medium leading-none text-foreground">
                               {item.title}
                             </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <p className="mt-1 line-clamp-2 text-xs leading-snug text-muted-foreground">
                               {item.description}
                             </p>
                           </Link>
@@ -96,6 +96,12 @@ export function Header() {
             </NavigationMenuList>
           </NavigationMenu>
 
+          <Link
+            href="/cimed"
+            className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            CIMED
+          </Link>
           <Link
             href="/samples"
             className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -123,12 +129,12 @@ export function Header() {
               Contact
             </Button>
           </Link>
-          <Link href="/contact#collaborate">
+          <Link href="/cimed/request-access">
             <Button
               size="sm"
               className="bg-accent text-white hover:bg-accent/90"
             >
-              Request Collaboration
+              Request Access
             </Button>
           </Link>
           <div className="ml-2">
@@ -174,6 +180,13 @@ export function Header() {
               ))}
             </div>
             <Link
+              href="/cimed"
+              className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              CIMED
+            </Link>
+            <Link
               href="/samples"
               className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted"
               onClick={() => setMobileMenuOpen(false)}
@@ -203,11 +216,11 @@ export function Header() {
             </Link>
             <div className="pt-4">
               <Link
-                href="/contact#collaborate"
+                href="/cimed/request-access"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Button className="w-full bg-accent text-white hover:bg-accent/90">
-                  Request Collaboration
+                  Request Access
                 </Button>
               </Link>
             </div>
