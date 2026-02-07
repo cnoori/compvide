@@ -23,9 +23,9 @@ const platformItems = [
     description: "Functional assays spanning all three activation pathways",
   },
   {
-    title: "CIMED Diagnostics",
-    href: "/platform#cimed",
-    description: "Proprietary diagnostic platform for complement monitoring",
+    title: "CIMED Diagnostic Platform",
+    href: "/cimed",
+    description: "Pathway-specific ELISA kits for complement monitoring and drug development",
   },
   {
     title: "Scientific Services",
@@ -97,6 +97,12 @@ export function Header() {
           </NavigationMenu>
 
           <Link
+            href="/cimed"
+            className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            CIMED
+          </Link>
+          <Link
             href="/samples"
             className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
@@ -123,12 +129,12 @@ export function Header() {
               Contact
             </Button>
           </Link>
-          <Link href="/contact#collaborate">
+          <Link href="/cimed/request-access">
             <Button
               size="sm"
               className="bg-accent text-white hover:bg-accent/90"
             >
-              Request Collaboration
+              Request Access
             </Button>
           </Link>
           <div className="ml-2">
@@ -174,6 +180,13 @@ export function Header() {
               ))}
             </div>
             <Link
+              href="/cimed"
+              className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              CIMED
+            </Link>
+            <Link
               href="/samples"
               className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted"
               onClick={() => setMobileMenuOpen(false)}
@@ -203,11 +216,11 @@ export function Header() {
             </Link>
             <div className="pt-4">
               <Link
-                href="/contact#collaborate"
+                href="/cimed/request-access"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Button className="w-full bg-accent text-white hover:bg-accent/90">
-                  Request Collaboration
+                  Request Access
                 </Button>
               </Link>
             </div>

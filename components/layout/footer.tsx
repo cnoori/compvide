@@ -9,16 +9,18 @@ import { Mail } from "lucide-react"
 const footerLinks = {
   explore: [
     { name: "Platform", href: "/platform" },
+    { name: "CIMED Diagnostic Platform", href: "/cimed" },
     { name: "Biological Samples", href: "/samples" },
-    { name: "CIMED Diagnostics", href: "/platform#cimed" },
     { name: "Partners", href: "/partners" },
     { name: "About", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
   ],
   services: [
     { name: "Assay Development", href: "/platform#assays" },
     { name: "Clinical Studies", href: "/platform#services" },
     { name: "Biomarker Programs", href: "/platform#biomarkers" },
     { name: "Custom Assays", href: "/platform#custom" },
+    { name: "Request CIMED Access", href: "/cimed/request-access" },
   ],
 }
 
@@ -107,14 +109,26 @@ export function Footer() {
             <div className="mt-4 space-y-4">
               <div>
                 <Link
-                  href="/contact#collaborate"
+                  href="/cimed/request-access"
                   className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80"
                 >
-                  Request Collaboration
+                  Request CIMED Access
                   <span className="ml-1">→</span>
                 </Link>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Initiate a scientific collaboration with our team.
+                  Get access to our complement diagnostic platform.
+                </p>
+              </div>
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80"
+                >
+                  Contact Us
+                  <span className="ml-1">→</span>
+                </Link>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Ask about services, partnerships, or general inquiries.
                 </p>
               </div>
               <div>

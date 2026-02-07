@@ -121,28 +121,36 @@ export async function sendContactEmail(formData: ContactFormData) {
 
 // ---------- CIMED ACCESS REQUEST FORM ----------
 
-interface CimedAccessFormData {
+interface CimedRequestFormData {
   firstName: string
   lastName: string
   email: string
   phone: string
-  organization: string
+  company: string
   role: string
-  programType: string
-  pathways: string[]
-  description: string
+  product: string
+  useCase: string
+  message: string
 }
 
-export async function sendCimedAccessEmail(formData: CimedAccessFormData) {
+export async function sendCimedRequestEmail(formData: CimedRequestFormData) {
   try {
-    const { firstName, lastName, email, phone, organization, role, programType, pathways, description } = formData
+    const { firstName, lastName, email, phone, company, role, product, useCase, message } = formData
 
-    const programLabels: Record<string, string> = {
-      "clinical-trial": "Clinical Trial",
-      "drug-development": "Drug Development Program",
-      "translational-research": "Translational Research Study",
-      "biomarker-discovery": "Biomarker Discovery Initiative",
-      "ivd-ldt": "IVD/LDT Implementation",
+    const productLabels: Record<string, string> = {
+      "cimed-cp": "CIMED-CP (Classical Pathway)",
+      "cimed-lp": "CIMED-LP (Lectin Pathway)",
+      "cimed-ap": "CIMED-AP (Alternative Pathway)",
+      "full-suite": "Full CIMED Suite (All 3 Pathways)",
+      "custom": "Custom / Not Sure",
+    }
+
+    const useCaseLabels: Record<string, string> = {
+      "clinical-trial": "Clinical Trial Support",
+      "pd-monitoring": "PD Drug Monitoring",
+      "preclinical": "Preclinical Research",
+      "biomarker": "Biomarker Development",
+      "academic": "Academic Research",
       "other": "Other",
     }
 
@@ -157,15 +165,15 @@ export async function sendCimedAccessEmail(formData: CimedAccessFormData) {
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
           <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Organization:</strong> ${organization}</p>
+          <p><strong>Company:</strong> ${company || "Not provided"}</p>
           <p><strong>Role/Title:</strong> ${role || "Not provided"}</p>
         </div>
         <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="color: #1a2744; margin-top: 0;">Program Details</h3>
-          <p><strong>Program Type:</strong> ${programLabels[programType] || programType}</p>
-          <p><strong>Pathways of Interest:</strong> ${pathways.length > 0 ? pathways.join(", ") : "Not specified"}</p>
-          <p><strong>Description:</strong></p>
-          <p style="white-space: pre-wrap;">${description}</p>
+          <h3 style="color: #1a2744; margin-top: 0;">Request Details</h3>
+          <p><strong>Product of Interest:</strong> ${productLabels[product] || product}</p>
+          <p><strong>Intended Use Case:</strong> ${useCaseLabels[useCase] || useCase || "Not specified"}</p>
+          <p><strong>Additional Details:</strong></p>
+          <p style="white-space: pre-wrap;">${message || "None provided"}</p>
         </div>
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
         <p style="color: #64748b; font-size: 12px;">This email was sent from the Compvide CIMED access request form.</p>
@@ -177,7 +185,7 @@ export async function sendCimedAccessEmail(formData: CimedAccessFormData) {
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #1a2744;">Thank You for Your CIMED Platform Access Request</h2>
         <p>Dear ${firstName},</p>
-        <p>Thank you for your interest in the CIMED&trade; platform. We have received your access request and our team is reviewing it.</p>
+        <p>Thank you for your interest in the CIMED&trade; platform. We have received your access request for <strong>${productLabels[product] || product}</strong> and our team is reviewing it.</p>
         <p>You can expect a response from us within <strong>2 business days</strong>. A member of our scientific team will reach out to discuss your program requirements and next steps.</p>
         <p>In the meantime, feel free to explore our website to learn more about the CIMED platform capabilities.</p>
         <br />
@@ -185,7 +193,6 @@ export async function sendCimedAccessEmail(formData: CimedAccessFormData) {
         <p><strong>The Compvide Team</strong></p>
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
         <p style="color: #64748b; font-size: 12px;">Compvide Inc. | Complement Assay Development & Diagnostics</p>
-        <p style="color: #64748b; font-size: 11px;">CIMED&trade; products and services are for Research Use Only (RUO). Not for use in diagnostic procedures unless otherwise authorized.</p>
       </div>
     `
 
@@ -201,7 +208,7 @@ export async function sendCimedAccessEmail(formData: CimedAccessFormData) {
       from: process.env.SMTP_USER,
       to: RECEIVER_EMAIL,
       replyTo: email,
-      subject: `CIMED Access Request: ${programLabels[programType] || programType} - ${organization}`,
+      subject: `CIMED Access Request: ${productLabels[product] || product} - ${firstName} ${lastName}`,
       html: internalHtml,
     })
 
