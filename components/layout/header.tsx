@@ -65,25 +65,25 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex lg:items-center lg:gap-1">
-          <NavigationMenu>
+          <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent">
                   Platform
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                  <ul className="grid w-[400px] gap-1 p-2 md:w-[480px] md:grid-cols-2">
                     {platformItems.map((item) => (
                       <li key={item.title}>
                         <NavigationMenuLink asChild>
                           <Link
                             href={item.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted"
                           >
                             <div className="text-sm font-medium leading-none text-foreground">
                               {item.title}
                             </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <p className="mt-1 line-clamp-2 text-xs leading-snug text-muted-foreground">
                               {item.description}
                             </p>
                           </Link>
