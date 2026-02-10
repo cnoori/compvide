@@ -1,6 +1,6 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import Image from "next/image"
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ShieldCheck,
@@ -9,10 +9,10 @@ import {
   Activity,
   CheckCircle2,
   Beaker,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "CIMED Diagnostic Platform",
@@ -29,46 +29,46 @@ export const metadata: Metadata = {
     "complement pathway",
     "functional assay",
   ],
-}
+};
 
 const products = [
   {
-    name: "CIMED-CP",
-    fullName: "Classical Pathway Assay",
+    name: "CIMED-AP",
+    fullName: "Alternative Pathway Activity & Drug Monitoring",
     description:
-      "Measures functional activity of the classical complement pathway. Detects C1q-dependent activation through C5b-9 (MAC) formation using a sensitive ELISA-based format.",
+      "Measures physiologic alternative pathway activity, amplification loop competence, and therapeutic drug effects under high-serum conditions.",
     features: [
-      "C1q-initiated activation",
-      "Functional endpoint: MAC deposition",
-      "Serum-based analysis",
-      "High sensitivity & specificity",
+      "PNH, aHUS, gMG, NMOSD, C3G, IC-MPGN",
+      "Complement drug development & mechanistic profiling",
+      "Alternative pathway inhibitor monitoring",
+      "Evaluation of off-target complement effects",
+    ],
+  },
+  {
+    name: "CIMED-CP",
+    fullName: "Classical Pathway Immune Complex Activity",
+    description:
+      "Measures immune-complex–driven classical pathway activation under physiologic serum conditions for mechanistic autoimmune profiling.",
+    features: [
+      "CAD, SLE, vasculitis, immune-complex diseases",
+      "Complement drug development & profiling",
+      "Classical pathway inhibitor monitoring",
+      "Biologic & immunotherapy safety assessment",
     ],
   },
   {
     name: "CIMED-LP",
-    fullName: "Lectin Pathway Activity Panel",
+    fullName: "Lectin Pathway Innate Immune Activation",
     description:
-      "Evaluates functional activity of the lectin pathway by measuring MBL/ficolin-dependent complement activation through terminal pathway complex formation.",
+      "Quantifies lectin-mediated complement activation for innate immune phenotyping and infection-related risk assessment.",
     features: [
-      "MBL & ficolin-dependent activation",
-      "Lectin pathway-specific readout",
-      "Pharmacodynamic drug monitoring",
-      "Clinical study-ready",
+      "HSCT-TMA & innate immune profiling",
+      "Infection susceptibility studies",
+      "Translational research applications",
+      "Lectin pathway inhibitor monitoring & safety surveillance",
     ],
   },
-  {
-    name: "CIMED-AP",
-    fullName: "Alternative Pathway Activity Panel",
-    description:
-      "Assesses the function of the alternative complement pathway, including Factor B and Factor D-dependent amplification through properdin-stabilized C3 convertase activity.",
-    features: [
-      "Factor B/D-dependent activation",
-      "Properdin-stabilized convertase",
-      "Pathway-specific inhibition profiling",
-      "Supports preclinical & clinical use",
-    ],
-  },
-]
+];
 
 const advantages = [
   {
@@ -95,7 +95,7 @@ const advantages = [
     description:
       "Currently designated RUO. Developed under rigorous quality standards for translational and clinical research.",
   },
-]
+];
 
 export default function CimedPage() {
   return (
@@ -114,10 +114,16 @@ export default function CimedPage() {
                   CIMED Diagnostic Platform
                 </h1>
                 <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/80 text-pretty sm:mt-6 sm:text-base lg:mx-0 lg:text-lg">
-                  A proprietary suite of functional complement activity and drug monitoring assays. Pathway-specific ELISA kits designed for translational research and clinical pharmacodynamic analysis.
+                  A proprietary suite for physiologic, high-serum complement
+                  measurement. CIMED™ enables pathway-resolved analysis and
+                  therapeutic monitoring, delivering clinically relevant
+                  insights for research and drug development.
                 </p>
                 <div className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row lg:justify-start">
-                  <Link href="/cimed/request-access" className="w-full sm:w-auto">
+                  <Link
+                    href="/cimed/request-access"
+                    className="w-full sm:w-auto"
+                  >
                     <Button
                       size="lg"
                       className="w-full bg-accent font-semibold text-white hover:bg-accent/90 sm:w-auto"
@@ -159,10 +165,18 @@ export default function CimedPage() {
                 What is CIMED?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
-                CIMED (Complement Immunoassay for Monitoring and Evaluating Diagnostics) is a proprietary platform developed by Compvide Inc. It provides functional, pathway-specific ELISA-based assays that measure real complement activation rather than just protein concentrations.
+                CIMED™ (Complement Inhibition Monitoring and Efficacy
+                Determination) is a proprietary platform engineered to measure
+                complement activity under physiologic, high-serum conditions.
+                Through pathway-resolved functional assays, it delivers
+                mechanistic insights directly relevant to therapeutic monitoring
+                and drug development.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Unlike conventional complement assays, CIMED kits are engineered to deliver clean, pathway-isolated data that is directly relevant to drug development and pharmacodynamic monitoring in clinical trials.
+                Unlike conventional complement assays, CIMED kits are engineered
+                to deliver clean, pathway-isolated data that is directly
+                relevant to drug development and pharmacodynamic monitoring in
+                clinical trials.
               </p>
             </div>
           </div>
@@ -176,7 +190,8 @@ export default function CimedPage() {
                 Why CIMED?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
-                Built from the ground up for complement-targeted drug development.
+                Built from the ground up for complement-targeted drug
+                development.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
@@ -208,7 +223,8 @@ export default function CimedPage() {
                 CIMED Product Suite
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
-                Three pathway-specific kits covering the full complement system.
+                Three pathway-specific platforms covering the functional
+                complement system.
               </p>
             </div>
 
@@ -225,7 +241,9 @@ export default function CimedPage() {
                     <div>
                       <h3 className="text-lg font-bold text-card-foreground sm:text-xl">
                         {product.name}
-                        <span className="text-xs align-top text-muted-foreground">TM</span>
+                        <span className="text-xs align-top text-muted-foreground">
+                          TM
+                        </span>
                       </h3>
                       <p className="text-xs text-muted-foreground sm:text-sm">
                         {product.fullName}
@@ -260,7 +278,8 @@ export default function CimedPage() {
                 Applications
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
-                CIMED kits are designed to support a range of use cases across the complement therapeutics pipeline.
+                CIMED kits are designed to support a range of use cases across
+                the complement therapeutics pipeline.
               </p>
             </div>
             <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6">
@@ -277,7 +296,9 @@ export default function CimedPage() {
                   className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 sm:p-5"
                 >
                   <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
-                  <p className="text-sm text-card-foreground sm:text-base">{useCase}</p>
+                  <p className="text-sm text-card-foreground sm:text-base">
+                    {useCase}
+                  </p>
                 </div>
               ))}
             </div>
@@ -292,7 +313,9 @@ export default function CimedPage() {
                 Ready to Explore CIMED?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80 sm:mt-4 sm:text-base">
-                Request access to the CIMED diagnostic platform for your complement research, clinical trial support, or drug development program.
+                Request access to the CIMED diagnostic platform for your
+                complement research, clinical trial support, or drug development
+                program.
               </p>
               <div className="mt-6 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center">
                 <Link href="/cimed/request-access" className="w-full sm:w-auto">
@@ -320,5 +343,5 @@ export default function CimedPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

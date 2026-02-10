@@ -1,39 +1,29 @@
-"use server"
+"use server";
 
-import nodemailer from "nodemailer"
+import { Resend } from "resend";
 
-const RECEIVER_EMAIL = "cnoori@npact.com"
-
-function getTransporter() {
-  return nodemailer.createTransport({
-    host: "smtp.office365.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASSWORD,
-    },
-    tls: {
-      ciphers: "SSLv3",
-    },
-  })
-}
+const resend = new Resend(process.env.RESEND_API_KEY);
+const RECEIVER_EMAIL = "info@compvide.com";
+// IMPORTANT: With Resend, the 'from' email must be a domain you have verified in their dashboard.
+// e.g., "onboarding@resend.dev" (for testing) or "notifications@yourdomain.com"
+const SENDER_EMAIL = process.env.RESEND_SENDER_EMAIL || "info@compvide.com";
 
 // ---------- CONTACT US FORM ----------
 
 interface ContactFormData {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  company: string
-  product: string
-  message: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  product: string;
+  message: string;
 }
 
 export async function sendContactEmail(formData: ContactFormData) {
   try {
-    const { firstName, lastName, email, phone, company, product, message } = formData
+    const { firstName, lastName, email, phone, company, product, message } =
+      formData;
 
     const productLabels: Record<string, string> = {
       "cimed-platform": "CIMED Platform",
@@ -45,7 +35,7 @@ export async function sendContactEmail(formData: ContactFormData) {
       "clinical-studies": "Clinical Study Support",
       "biomarker-programs": "Biomarker Programs",
       "general-inquiry": "General Inquiry",
-    }
+    };
 
     // Internal notification email
     const internalHtml = `
@@ -69,7 +59,7 @@ export async function sendContactEmail(formData: ContactFormData) {
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
         <p style="color: #64748b; font-size: 12px;">This email was sent from the Compvide website contact form.</p>
       </div>
-    `
+    `;
 
     // Confirmation email to the lead
     const leadHtml = `
@@ -85,74 +75,90 @@ export async function sendContactEmail(formData: ContactFormData) {
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
         <p style="color: #64748b; font-size: 12px;">Compvide Inc. | Complement Assay Development & Diagnostics</p>
       </div>
-    `
+    `;
 
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
-      console.log("[Compvide] SMTP not configured. Logging contact form submission:")
-      console.log("[Compvide] Contact Data:", JSON.stringify(formData, null, 2))
-      return { success: true }
+    if (!process.env.RESEND_API_KEY) {
+      console.log(
+        "[Compvide] Resend API Key missing. Logging contact form submission:",
+      );
+      console.log(
+        "[Compvide] Contact Data:",
+        JSON.stringify(formData, null, 2),
+      );
+      return { success: true };
     }
 
-    const transporter = getTransporter()
+    // Send internal notification and lead confirmation in parallel
+    await Promise.all([
+      resend.emails.send({
+        from: SENDER_EMAIL,
+        to: RECEIVER_EMAIL,
+        replyTo: email,
+        subject: `New Contact Inquiry: ${productLabels[product] || product} - ${firstName} ${lastName}`,
+        html: internalHtml,
+      }),
+      resend.emails.send({
+        from: SENDER_EMAIL,
+        to: email,
+        subject: "Thank You for Contacting Compvide",
+        html: leadHtml,
+      }),
+    ]);
 
-    // Send internal notification
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: RECEIVER_EMAIL,
-      replyTo: email,
-      subject: `New Contact Inquiry: ${productLabels[product] || product} - ${firstName} ${lastName}`,
-      html: internalHtml,
-    })
-
-    // Send confirmation to the lead
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: email,
-      subject: "Thank You for Contacting Compvide",
-      html: leadHtml,
-    })
-
-    return { success: true }
+    return { success: true };
   } catch (error) {
-    console.error("[Compvide] Error sending contact email:", error)
-    return { success: false, error: "Failed to send your message. Please try again." }
+    console.error("[Compvide] Error sending contact email:", error);
+    return {
+      success: false,
+      error: "Failed to send your message. Please try again.",
+    };
   }
 }
 
 // ---------- CIMED ACCESS REQUEST FORM ----------
 
 interface CimedRequestFormData {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  company: string
-  role: string
-  product: string
-  useCase: string
-  message: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  role: string;
+  product: string;
+  useCase: string;
+  message: string;
 }
 
 export async function sendCimedRequestEmail(formData: CimedRequestFormData) {
   try {
-    const { firstName, lastName, email, phone, company, role, product, useCase, message } = formData
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      company,
+      role,
+      product,
+      useCase,
+      message,
+    } = formData;
 
     const productLabels: Record<string, string> = {
       "cimed-cp": "CIMED-CP (Classical Pathway)",
       "cimed-lp": "CIMED-LP (Lectin Pathway)",
       "cimed-ap": "CIMED-AP (Alternative Pathway)",
       "full-suite": "Full CIMED Suite (All 3 Pathways)",
-      "custom": "Custom / Not Sure",
-    }
+      custom: "Custom / Not Sure",
+    };
 
     const useCaseLabels: Record<string, string> = {
       "clinical-trial": "Clinical Trial Support",
       "pd-monitoring": "PD Drug Monitoring",
-      "preclinical": "Preclinical Research",
-      "biomarker": "Biomarker Development",
-      "academic": "Academic Research",
-      "other": "Other",
-    }
+      preclinical: "Preclinical Research",
+      biomarker: "Biomarker Development",
+      academic: "Academic Research",
+      other: "Other",
+    };
 
     // Internal notification
     const internalHtml = `
@@ -178,7 +184,7 @@ export async function sendCimedRequestEmail(formData: CimedRequestFormData) {
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
         <p style="color: #64748b; font-size: 12px;">This email was sent from the Compvide CIMED access request form.</p>
       </div>
-    `
+    `;
 
     // Confirmation email to the requester
     const leadHtml = `
@@ -194,34 +200,42 @@ export async function sendCimedRequestEmail(formData: CimedRequestFormData) {
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
         <p style="color: #64748b; font-size: 12px;">Compvide Inc. | Complement Assay Development & Diagnostics</p>
       </div>
-    `
+    `;
 
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
-      console.log("[Compvide] SMTP not configured. Logging CIMED access request:")
-      console.log("[Compvide] CIMED Access Data:", JSON.stringify(formData, null, 2))
-      return { success: true }
+    if (!process.env.RESEND_API_KEY) {
+      console.log(
+        "[Compvide] Resend API Key missing. Logging CIMED access request:",
+      );
+      console.log(
+        "[Compvide] CIMED Access Data:",
+        JSON.stringify(formData, null, 2),
+      );
+      return { success: true };
     }
 
-    const transporter = getTransporter()
+    // Send in parallel
+    await Promise.all([
+      resend.emails.send({
+        from: SENDER_EMAIL,
+        to: RECEIVER_EMAIL,
+        replyTo: email,
+        subject: `CIMED Access Request: ${productLabels[product] || product} - ${firstName} ${lastName}`,
+        html: internalHtml,
+      }),
+      resend.emails.send({
+        from: SENDER_EMAIL,
+        to: email,
+        subject: "Your CIMED Platform Access Request - Compvide",
+        html: leadHtml,
+      }),
+    ]);
 
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: RECEIVER_EMAIL,
-      replyTo: email,
-      subject: `CIMED Access Request: ${productLabels[product] || product} - ${firstName} ${lastName}`,
-      html: internalHtml,
-    })
-
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: email,
-      subject: "Your CIMED Platform Access Request - Compvide",
-      html: leadHtml,
-    })
-
-    return { success: true }
+    return { success: true };
   } catch (error) {
-    console.error("[Compvide] Error sending CIMED access email:", error)
-    return { success: false, error: "Failed to send your request. Please try again." }
+    console.error("[Compvide] Error sending CIMED access email:", error);
+    return {
+      success: false,
+      error: "Failed to send your request. Please try again.",
+    };
   }
 }

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { useEffect, useState } from "react"
-import { useTheme } from "next-themes"
-import { Mail } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const footerLinks = {
   explore: [
@@ -22,20 +22,23 @@ const footerLinks = {
     { name: "Custom Assays", href: "/platform#custom" },
     { name: "Request CIMED Access", href: "/cimed/request-access" },
   ],
-}
+};
 
 export function Footer() {
-  const [mounted, setMounted] = useState(false)
-  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
+
+  // Avoid hydration mismatch by waiting for mount
+  if (!mounted) {
+    return null;
+  }
 
   const logoSrc =
-    mounted && resolvedTheme === "dark"
-      ? "/images/logo-white.png"
-      : "/images/logo5.png"
+    resolvedTheme === "dark" ? "/images/logo-white.png" : "/images/logo5.png";
 
   return (
     <footer className="border-t border-border bg-muted/30">
@@ -45,11 +48,12 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <Image
-                src={logoSrc || "/placeholder.svg"}
+                src={logoSrc}
                 alt="Compvide"
                 width={130}
                 height={38}
                 className="h-9 w-auto"
+                priority
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -115,28 +119,36 @@ export function Footer() {
                   Request CIMED Access
                   <span className="ml-1">→</span>
                 </Link>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Get access to our complement diagnostic platform.
-                </p>
               </div>
-              <div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80"
+
+              <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                <a
+                  href="tel:2063506075"
+                  className="flex items-center gap-2 transition-colors hover:text-accent"
                 >
-                  Contact Us
-                  <span className="ml-1">→</span>
-                </Link>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Ask about services, partnerships, or general inquiries.
-                </p>
-              </div>
-              <div>
+                  <Phone className="h-4 w-4 shrink-0" />
+                  (206) 350-6075
+                </a>
+
+                <a
+                  href="https://maps.google.com/?q=879+Rainier+Ave+N,+STE+A103,+Renton+WA+98057"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 transition-colors hover:text-accent"
+                >
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>
+                    879 Rainier Ave N, STE A103,
+                    <br />
+                    Renton WA 98057
+                  </span>
+                </a>
+
                 <Link
                   href="mailto:info@compvide.com"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80"
+                  className="flex items-center gap-2 transition-colors hover:text-accent"
                 >
-                  <Mail className="h-4 w-4" />
+                  <Mail className="h-4 w-4 shrink-0" />
                   info@compvide.com
                 </Link>
               </div>
@@ -173,5 +185,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
