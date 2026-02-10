@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 const leadershipTeam = [
   {
-    name: "Dr. Sadam Yaseen, Ph.D",
+    name: "Dr. Sadam Yaseen, Ph.D.",
     role: "President and Chief Executive Officer",
     image: "/images/dr-yassen.jpeg",
     shortBio:
