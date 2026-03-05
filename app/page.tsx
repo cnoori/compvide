@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: "Compvide — Complement Assay Development & Diagnostic Innovation",
     description:
       "Advance your complement-targeted therapeutics with functional assays built for translational impact.",
+    url: "/",
   },
 };
 

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "Partners | Complement Research & Diagnostics Collaboration",
     description:
       "Collaborate with Compvide on complement assay development, translational research, and diagnostic innovation.",
+    url: "/partners",
   },
   alternates: {
     canonical: "/partners",

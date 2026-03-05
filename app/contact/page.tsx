@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: "Contact Compvide | Complement Diagnostics Inquiry",
     description:
       "Reach out to discuss complement assay development, CIMED platform access, or partnership opportunities.",
+    url: "/contact",
   },
   alternates: {
     canonical: "/contact",

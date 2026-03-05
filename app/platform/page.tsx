@@ -33,9 +33,18 @@ export const metadata: Metadata = {
     "high-serum testing",
   ],
   openGraph: {
-    title: "Complement Assay Platform | Services & Diagnostic Innovation",
+    title: "The Compvide Complement Platform — Assays, Services & Innovation",
     description:
-      "Functional complement assays, clinical sample analysis, and the CIMED diagnostic platform — built for translational impact.",
+      "Full suite of complement solutions: functional assays, clinical study support, biomarker programs, and custom assay development.",
+    url: "/platform",
+    images: [
+      {
+        url: "/og/platform.png",
+        width: 1200,
+        height: 630,
+        alt: "The Compvide Complement Platform — Assays, Services & Innovation",
+      },
+    ],
   },
   alternates: {
     canonical: "/platform",

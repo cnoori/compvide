@@ -28,9 +28,18 @@ export const metadata: Metadata = {
     "immunology",
   ],
   openGraph: {
-    title: "About Compvide | Complement Biology Leadership",
+    title: "About Compvide — Leadership in Complement Biology",
     description:
-      "Meet the scientists and executives advancing complement diagnostics and translational research at Compvide.",
+      "World-class team of complement biologists, clinical researchers, and diagnostics innovators advancing complement science.",
+    url: "/about",
+    images: [
+      {
+        url: "/og/about.png",
+        width: 1200,
+        height: 630,
+        alt: "About Compvide — Leadership in Complement Biology",
+      },
+    ],
   },
   alternates: {
     canonical: "/about",

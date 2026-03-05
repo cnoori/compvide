@@ -48,12 +48,25 @@ export const metadata: Metadata = {
     title: "Compvide | Complement Assay Development & Clinical Sample Analysis",
     description:
       "Advancing complement assay development, translational research, and diagnostic innovation for drug development and precision medicine.",
+    images: [
+      {
+        url: "/og/default.png",
+        width: 1200,
+        height: 630,
+        alt: "Compvide — Complement Assay Development & Diagnostic Innovation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Compvide | Complement Assay Development",
     description:
       "Biotechnology company focused on functional complement assays and diagnostic innovation.",
+    images: ["/og/default.png"],
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
   },
 }
 

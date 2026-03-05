@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "Biological Samples | High-Integrity Serum & Plasma",
     description:
       "Certified human serum and plasma optimized for functional complement assays and translational research.",
+    url: "/samples",
   },
   alternates: {
     canonical: "/samples",

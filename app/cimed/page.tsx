@@ -31,6 +31,20 @@ export const metadata: Metadata = {
     "complement pathway",
     "functional assay",
   ],
+  openGraph: {
+    title: "CIMED Diagnostic Platform — Pathway-Specific Complement ELISA Kits",
+    description:
+      "Functional ELISA-based kits for classical, lectin, and alternative pathway complement analysis and drug monitoring.",
+    url: "/cimed",
+    images: [
+      {
+        url: "/og/cimed.png",
+        width: 1200,
+        height: 630,
+        alt: "CIMED Diagnostic Platform — Pathway-Specific Complement ELISA Kits",
+      },
+    ],
+  },
   alternates: {
     canonical: "/cimed",
   },
