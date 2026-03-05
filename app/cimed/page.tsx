@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "complement pathway",
     "functional assay",
   ],
+  alternates: {
+    canonical: "/cimed",
+  },
 };
 
 const products = [

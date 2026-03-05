@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Request CIMED Platform Access",
   description:
     "Request access to the CIMED complement diagnostic platform. Fill out the form and our team will get back to you within 2 business days.",
+  alternates: {
+    canonical: "/cimed/request-access",
+  },
 }
 
 export default function CimedRequestAccessPage() {

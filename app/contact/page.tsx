@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "biotech partnership",
     "research inquiry",
   ],
+  alternates: {
+    canonical: "/contact",
+  },
 }
 
 export default function ContactPage() {

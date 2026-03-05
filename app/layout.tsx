@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.compvide.com"),
   title: {
     default: "Compvide | Complement Assay Development & Clinical Sample Analysis",
     template: "%s | Compvide",
@@ -54,7 +55,6 @@ export const metadata: Metadata = {
     description:
       "Biotechnology company focused on functional complement assays and diagnostic innovation.",
   },
-    generator: 'v0.app'
 }
 
 export const viewport: Viewport = {

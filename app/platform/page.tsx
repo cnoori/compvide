@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     "biomarker analysis",
     "clinical studies",
   ],
+  alternates: {
+    canonical: "/platform",
+  },
 };
 
 export default function PlatformPage() {

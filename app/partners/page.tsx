@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Partners & Collaborators | Scientific Partnerships",
   description: "Compvide collaborates with organizations across the life sciences ecosystem to advance complement assay development, translational research, and diagnostic innovation.",
   keywords: ["pharmaceutical partnerships", "biotech collaboration", "academic research", "diagnostics partnership", "complement research"],
+  alternates: {
+    canonical: "/partners",
+  },
 }
 
 export default function PartnersPage() {

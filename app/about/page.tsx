@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "leadership team",
     "scientific advisory board",
   ],
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const leadershipTeam = [

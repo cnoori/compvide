@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Biological Samples | High-Integrity Serum & Plasma",
   description: "Compvide provides certified human serum and plasma optimized for functional complement assays, supporting reproducible complement research and complement-targeted drug development.",
   keywords: ["human serum", "plasma samples", "complement research", "biological samples", "CH50 testing", "complement activity"],
+  alternates: {
+    canonical: "/samples",
+  },
 }
 
 export default function SamplesPage() {

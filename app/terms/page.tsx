@@ -5,6 +5,13 @@ import { Footer } from "@/components/layout/footer"
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Terms and conditions for using Compvide's website and services.",
+  alternates: {
+    canonical: "/terms",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function TermsPage() {
