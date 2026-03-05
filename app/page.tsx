@@ -17,8 +17,16 @@ import { JsonLd } from "@/components/json-ld";
 import { schema } from "@/lib/schema";
 
 export const metadata: Metadata = {
+  title: "Complement Assay Development & Diagnostic Innovation",
+  description:
+    "Compvide is the premier platform for functional complement assay development, clinical sample analysis, and complement diagnostics. Explore the CIMED diagnostic platform.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "Compvide — Complement Assay Development & Diagnostic Innovation",
+    description:
+      "Advance your complement-targeted therapeutics with functional assays built for translational impact.",
   },
 };
 

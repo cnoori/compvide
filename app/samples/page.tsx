@@ -10,7 +10,12 @@ import { schema } from "@/lib/schema"
 export const metadata: Metadata = {
   title: "Biological Samples | High-Integrity Serum & Plasma",
   description: "Compvide provides certified human serum and plasma optimized for functional complement assays, supporting reproducible complement research and complement-targeted drug development.",
-  keywords: ["human serum", "plasma samples", "complement research", "biological samples", "CH50 testing", "complement activity"],
+  keywords: ["human serum", "plasma samples", "complement research", "biological samples", "CH50 testing", "complement activity", "research-grade serum", "complement-active serum", "clinical sample"],
+  openGraph: {
+    title: "Biological Samples | High-Integrity Serum & Plasma",
+    description:
+      "Certified human serum and plasma optimized for functional complement assays and translational research.",
+  },
   alternates: {
     canonical: "/samples",
   },

@@ -8,9 +8,14 @@ import { JsonLd } from "@/components/json-ld"
 import { schema } from "@/lib/schema"
 
 export const metadata: Metadata = {
-  title: "Partners & Collaborators | Scientific Partnerships",
+  title: "Partners | Complement Research & Diagnostics Collaboration",
   description: "Compvide collaborates with organizations across the life sciences ecosystem to advance complement assay development, translational research, and diagnostic innovation.",
-  keywords: ["pharmaceutical partnerships", "biotech collaboration", "academic research", "diagnostics partnership", "complement research"],
+  keywords: ["pharmaceutical partnerships", "biotech collaboration", "academic research", "diagnostics partnership", "complement research", "complement CRO partner", "life sciences collaboration"],
+  openGraph: {
+    title: "Partners | Complement Research & Diagnostics Collaboration",
+    description:
+      "Collaborate with Compvide on complement assay development, translational research, and diagnostic innovation.",
+  },
   alternates: {
     canonical: "/partners",
   },

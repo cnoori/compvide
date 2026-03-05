@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Request CIMED Platform Access",
   description:
     "Request access to the CIMED complement diagnostic platform. Fill out the form and our team will get back to you within 2 business days.",
+  keywords: ["CIMED access", "complement diagnostic kit", "ELISA kit request"],
+  openGraph: {
+    title: "Request CIMED Platform Access",
+    description:
+      "Request access to the CIMED complement diagnostic platform for your research or clinical program.",
+  },
   alternates: {
     canonical: "/cimed/request-access",
   },

@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld"
 import { schema } from "@/lib/schema"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Compvide | Complement Diagnostics Inquiry",
   description:
     "Get in touch with Compvide. Ask about our complement diagnostic platform, assay development services, or partnership opportunities.",
   keywords: [
@@ -15,7 +15,14 @@ export const metadata: Metadata = {
     "CIMED inquiry",
     "biotech partnership",
     "research inquiry",
+    "complement assay inquiry",
+    "diagnostic platform inquiry",
   ],
+  openGraph: {
+    title: "Contact Compvide | Complement Diagnostics Inquiry",
+    description:
+      "Reach out to discuss complement assay development, CIMED platform access, or partnership opportunities.",
+  },
   alternates: {
     canonical: "/contact",
   },

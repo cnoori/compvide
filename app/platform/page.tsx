@@ -19,7 +19,7 @@ import { JsonLd } from "@/components/json-ld";
 import { schema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Platform | Complement Assay & Diagnostic Innovation",
+  title: "Complement Assay Platform | Services & Diagnostic Innovation",
   description:
     "Compvide's platform integrates complement biology expertise, functional assay design, and rigorous sample integrity control to generate reliable, physiologically relevant data for translational research.",
   keywords: [
@@ -28,7 +28,15 @@ export const metadata: Metadata = {
     "functional assays",
     "biomarker analysis",
     "clinical studies",
+    "complement CRO",
+    "pathway-specific assays",
+    "high-serum testing",
   ],
+  openGraph: {
+    title: "Complement Assay Platform | Services & Diagnostic Innovation",
+    description:
+      "Functional complement assays, clinical sample analysis, and the CIMED diagnostic platform — built for translational impact.",
+  },
   alternates: {
     canonical: "/platform",
   },
