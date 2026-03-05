@@ -4,6 +4,8 @@ import { ArrowRight, Droplets, FileCheck, TestTubes, AlertCircle } from "lucide-
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { JsonLd } from "@/components/json-ld"
+import { schema } from "@/lib/schema"
 
 export const metadata: Metadata = {
   title: "Biological Samples | High-Integrity Serum & Plasma",
@@ -17,6 +19,7 @@ export const metadata: Metadata = {
 export default function SamplesPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={schema.breadcrumb([{ name: "Home", path: "/" }, { name: "Biological Samples", path: "/samples" }])} />
       <Header />
       
       <main className="flex-1">

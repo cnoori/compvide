@@ -15,6 +15,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/json-ld";
+import { schema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Platform | Complement Assay & Diagnostic Innovation",
@@ -35,6 +37,7 @@ export const metadata: Metadata = {
 export default function PlatformPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={[...schema.services, schema.breadcrumb([{ name: "Home", path: "/" }, { name: "Platform", path: "/platform" }])]} />
       <Header />
 
       <main className="flex-1">

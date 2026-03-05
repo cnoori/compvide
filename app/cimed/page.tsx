@@ -13,6 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/json-ld";
+import { schema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "CIMED Diagnostic Platform",
@@ -103,6 +105,7 @@ const advantages = [
 export default function CimedPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={[...schema.cimedProducts(products), schema.breadcrumb([{ name: "Home", path: "/" }, { name: "CIMED", path: "/cimed" }])]} />
       <Header />
       <main className="flex-1">
         {/* Hero */}
