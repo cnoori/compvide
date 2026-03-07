@@ -55,7 +55,17 @@ export default function SamplesPage() {
                 <h2 className="mt-4 font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                   Certified Human Complement Serum
                 </h2>
-                <p className="mt-6 text-muted-foreground leading-relaxed">
+                <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
+                  What is complement-active serum?
+                </h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  Complement-active serum is human serum that has been collected
+                  and processed using specialized methods to preserve the full
+                  functional activity of all complement pathways. Standard serum
+                  preparation often causes unintended complement activation and
+                  depletion, compromising downstream assay results.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-relaxed">
                   There is limited guidance on proper serum preparation for functional complement assays. Mishandling can lead to unintended complement activation and depletion.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">

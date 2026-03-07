@@ -86,12 +86,15 @@ export default function PlatformPage() {
                   Core Platform
                 </div>
                 <h2 className="mt-4 font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  Complement Assay Platform
+                  What is the Compvide Complement Assay Platform?
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed">
-                  At the core of Compvide is a functional complement assay
-                  platform spanning all three activation pathways and terminal
-                  pathway biology.
+                  The Compvide Complement Platform offers end-to-end complement
+                  assay services including custom assay development, clinical
+                  study sample analysis, biomarker programs, and
+                  pathway-specific functional testing across all three
+                  complement activation pathways (Classical, Lectin, and
+                  Alternative).
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                   This comprehensive pathway coverage enables mechanistic

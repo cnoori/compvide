@@ -184,18 +184,18 @@ export default function CimedPage() {
                 What is CIMED?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
-                CIMED™ (Complement Inhibition Monitoring and Efficacy
-                Determination) is a proprietary platform engineered to measure
-                complement activity under physiologic, high-serum conditions.
-                Through pathway-resolved functional assays, it delivers
-                mechanistic insights directly relevant to therapeutic monitoring
-                and drug development.
+                CIMED is a proprietary complement diagnostic platform developed
+                by Compvide. It consists of three pathway-specific functional
+                ELISA kits — CIMED-AP (Alternative Pathway), CIMED-CP
+                (Classical Pathway), and CIMED-LP (Lectin Pathway) — designed
+                for complement activity measurement, inhibition profiling, and
+                pharmacodynamic drug monitoring in clinical trials.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Unlike conventional complement assays, CIMED kits are engineered
-                to deliver clean, pathway-isolated data that is directly
-                relevant to drug development and pharmacodynamic monitoring in
-                clinical trials.
+                to deliver clean, pathway-isolated data under physiologic,
+                high-serum conditions — directly relevant to drug development
+                and therapeutic monitoring.
               </p>
             </div>
           </div>

@@ -9,6 +9,7 @@ import {
   Building2,
   GraduationCap,
   Handshake,
+  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
@@ -221,10 +222,11 @@ export default function HomePage() {
                   Built for Complement Biology
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80 sm:mt-6 sm:text-base">
-                  Compvide has become a trusted partner for pharmaceutical and
-                  biotech companies advancing complement-targeted therapeutics.
-                  Our proprietary platform supports assay development, biomarker
-                  programs, and clinical study sample analysis.
+                  Compvide is a biotechnology company specializing in functional
+                  complement assay development, clinical sample analysis, and
+                  complement diagnostics. The company&apos;s proprietary CIMED
+                  platform provides pathway-specific ELISA kits for complement
+                  activity measurement and pharmacodynamic drug monitoring.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80 sm:mt-4 sm:text-base">
                   With deep expertise in complement biology and a commitment to
@@ -331,8 +333,68 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Key Differentiators */}
+        <section className="bg-muted/40 py-12 sm:py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
+                Why Compvide?
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
+                Key differentiators that set Compvide apart in complement
+                science.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-10 max-w-3xl space-y-4 sm:mt-12">
+              {[
+                {
+                  title: "Pathway-specific assays",
+                  detail:
+                    "Functional assays spanning all three complement activation pathways (CP, LP, AP)",
+                },
+                {
+                  title: "Proprietary diagnostic platform",
+                  detail:
+                    "CIMED\u2122 \u2014 ELISA-based kits for complement monitoring and drug development",
+                },
+                {
+                  title: "Clinical study support",
+                  detail:
+                    "PD monitoring, translational readouts, and clinical sample analysis",
+                },
+                {
+                  title: "Research-grade biological samples",
+                  detail:
+                    "Certified human complement serum and plasma with full QC documentation",
+                },
+                {
+                  title: "Scientific leadership",
+                  detail:
+                    "Team led by complement biologists with 25+ years of domain expertise",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4 rounded-xl border border-border bg-card p-5 sm:p-6"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
+                  <div>
+                    <h3 className="text-sm font-semibold text-card-foreground sm:text-base">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="bg-muted/40 py-12 sm:py-20 lg:py-24">
+        <section className="py-12 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
