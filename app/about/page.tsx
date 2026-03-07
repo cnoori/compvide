@@ -15,16 +15,16 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-  title: "About Compvide | Complement Biology Leadership",
+  title: "About Compvide | Complement Biotechnology Leadership",
   description:
-    "Compvide is a biotechnology company focused on advancing complement system science through rigorous assay development, translational research, and diagnostic innovation.",
+    "Compvide is a complement biotechnology company led by world-class complement biologists and clinical researchers. Meet our leadership and advisory board.",
   keywords: [
-    "Compvide",
-    "biotechnology company",
-    "complement diagnostics",
-    "leadership team",
+    "complement biotechnology company",
+    "complement science leadership",
+    "complement biology experts",
     "scientific advisory board",
-    "complement biology",
+    "Compvide",
+    "complement diagnostics",
     "immunology",
   ],
   openGraph: {

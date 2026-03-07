@@ -19,7 +19,7 @@ import { schema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Complement Assay Development & Diagnostic Innovation",
   description:
-    "Compvide is the premier platform for functional complement assay development, clinical sample analysis, and complement diagnostics. Explore the CIMED diagnostic platform.",
+    "Compvide leads complement assay development for pharma and biotech. Functional assays, clinical sample analysis, and the CIMED diagnostic platform.",
   alternates: {
     canonical: "/",
   },
@@ -58,7 +58,7 @@ const capabilities = [
     title: "Diagnostic Innovation",
     description:
       "Building scalable diagnostic tools from complement biology, including the proprietary CIMED platform family.",
-    href: "/platform#cimed",
+    href: "/cimed",
   },
 ];
 

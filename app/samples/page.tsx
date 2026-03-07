@@ -8,9 +8,9 @@ import { JsonLd } from "@/components/json-ld"
 import { schema } from "@/lib/schema"
 
 export const metadata: Metadata = {
-  title: "Biological Samples | High-Integrity Serum & Plasma",
-  description: "Compvide provides certified human serum and plasma optimized for functional complement assays, supporting reproducible complement research and complement-targeted drug development.",
-  keywords: ["human serum", "plasma samples", "complement research", "biological samples", "CH50 testing", "complement activity", "research-grade serum", "complement-active serum", "clinical sample"],
+  title: "Human Complement Serum & Plasma | Biological Samples",
+  description: "Source high-integrity human complement serum and plasma from Compvide. Research-grade biological samples optimized for functional complement assays.",
+  keywords: ["human complement serum", "complement-active serum", "research-grade serum", "plasma samples", "biological samples", "CH50 testing", "complement activity", "clinical sample"],
   openGraph: {
     title: "Biological Samples | High-Integrity Serum & Plasma",
     description:
@@ -34,7 +34,7 @@ export default function SamplesPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-                High-Integrity Biological Samples for Complement Research
+                Human Complement Serum & Plasma for Research
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
                 Compvide provides certified human serum and plasma optimized for functional complement assays, supporting reproducible complement research and complement-targeted drug development.

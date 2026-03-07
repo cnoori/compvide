@@ -17,19 +17,18 @@ import { JsonLd } from "@/components/json-ld";
 import { schema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "CIMED Diagnostic Platform",
+  title: "CIMED Complement Diagnostic Platform | ELISA Kits",
   description:
-    "CIMED is a proprietary complement activity and drug monitoring platform developed by Compvide. Functional ELISA-based kits for classical, lectin, and alternative pathway analysis.",
+    "CIMED is Compvide's proprietary complement diagnostic platform — pathway-specific ELISA kits for complement activity measurement and drug monitoring.",
   keywords: [
-    "CIMED",
-    "complement diagnostics",
+    "CIMED ELISA",
+    "complement diagnostic platform",
+    "complement drug monitoring",
+    "pathway-specific ELISA kit",
     "CIMED-CP",
     "CIMED-LP",
     "CIMED-AP",
-    "complement ELISA",
-    "drug monitoring",
     "complement pathway",
-    "functional assay",
   ],
   openGraph: {
     title: "CIMED Diagnostic Platform — Pathway-Specific Complement ELISA Kits",
@@ -131,7 +130,7 @@ export default function CimedPage() {
                   Advanced Complement Diagnostics
                 </div>
                 <h1 className="text-2xl font-bold leading-tight tracking-tight text-primary-foreground text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                  CIMED Diagnostic Platform
+                  CIMED Complement Diagnostic Platform
                 </h1>
                 <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/80 text-pretty sm:mt-6 sm:text-base lg:mx-0 lg:text-lg">
                   A proprietary suite for physiologic, high-serum complement

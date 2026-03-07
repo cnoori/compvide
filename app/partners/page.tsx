@@ -8,9 +8,9 @@ import { JsonLd } from "@/components/json-ld"
 import { schema } from "@/lib/schema"
 
 export const metadata: Metadata = {
-  title: "Partners | Complement Research & Diagnostics Collaboration",
-  description: "Compvide collaborates with organizations across the life sciences ecosystem to advance complement assay development, translational research, and diagnostic innovation.",
-  keywords: ["pharmaceutical partnerships", "biotech collaboration", "academic research", "diagnostics partnership", "complement research", "complement CRO partner", "life sciences collaboration"],
+  title: "Complement Research Collaboration | Partners",
+  description: "Partner with Compvide for complement research collaboration. We work with pharma, biotech, academic labs, and diagnostics developers worldwide.",
+  keywords: ["complement research collaboration", "pharma complement partnership", "complement CRO partner", "life sciences collaboration", "biotech collaboration", "academic research", "diagnostics partnership"],
   openGraph: {
     title: "Partners | Complement Research & Diagnostics Collaboration",
     description:
@@ -34,7 +34,7 @@ export default function PartnersPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-                Our Partners & Collaborators
+                Complement Research Partners & Collaborators
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
                 Compvide collaborates with organizations across the life sciences ecosystem to advance complement assay development, translational research, and diagnostic innovation.
