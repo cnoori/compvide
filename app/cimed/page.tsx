@@ -118,7 +118,7 @@ const advantages = [
 export default function CimedPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <JsonLd data={[...schema.cimedProducts(products), schema.breadcrumb([{ name: "Home", path: "/" }, { name: "CIMED", path: "/cimed" }])]} />
+      <JsonLd data={[schema.cimedProductGroup, ...schema.cimedProducts(products), schema.breadcrumb([{ name: "Home", path: "/" }, { name: "CIMED", path: "/cimed" }])]} />
       <Header />
       <main className="flex-1">
         {/* Hero */}
@@ -184,9 +184,10 @@ export default function CimedPage() {
                 What is CIMED?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
-                CIMED is a proprietary complement diagnostic platform developed
-                by Compvide. It consists of three pathway-specific functional
-                ELISA kits — CIMED-AP (Alternative Pathway), CIMED-CP
+                CIMED is an in vitro diagnostic platform designed for clinical
+                and research use in complement-mediated disease monitoring.
+                Developed by Compvide, it consists of three pathway-specific
+                functional ELISA kits — CIMED-AP (Alternative Pathway), CIMED-CP
                 (Classical Pathway), and CIMED-LP (Lectin Pathway) — designed
                 for complement activity measurement, inhibition profiling, and
                 pharmacodynamic drug monitoring in clinical trials.
@@ -196,6 +197,10 @@ export default function CimedPage() {
                 to deliver clean, pathway-isolated data under physiologic,
                 high-serum conditions — directly relevant to drug development
                 and therapeutic monitoring.
+              </p>
+              <p className="mt-4 text-xs leading-relaxed text-muted-foreground/70 italic">
+                CIMED products are for in vitro research use only. Not approved
+                for diagnostic or clinical use.
               </p>
             </div>
           </div>
