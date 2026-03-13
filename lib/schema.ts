@@ -19,10 +19,11 @@ const organization = {
   "@type": "Organization",
   "@id": ORG_ID,
   name: "Compvide",
+  alternateName: "Compvide Inc.",
   url: BASE_URL,
   logo: `${BASE_URL}/images/logo.png`,
   description:
-    "Compvide is a biotechnology company specializing in functional complement assays, biomarker programs, and clinical-study sample analysis for translational research and therapeutic development.",
+    "Compvide is a biotechnology company specializing in functional complement assays, biomarker programs, and clinical-study sample analysis for translational research and therapeutic development. Compvide is the manufacturer of the CIMED diagnostic platform.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "879 Rainier Ave N, STE A103",
@@ -47,6 +48,13 @@ const organization = {
     "biomarker analysis",
     "translational research",
   ],
+  makesOffer: [
+    { "@id": `${BASE_URL}/cimed/#product-group` },
+    { "@id": `${BASE_URL}/platform/#assay-services` },
+    { "@id": `${BASE_URL}/platform/#clinical-services` },
+    { "@id": `${BASE_URL}/platform/#biomarker-services` },
+  ],
+  sameAs: [],
 };
 
 const webSite = {
@@ -112,6 +120,7 @@ function cimedProducts(
       description: product.description,
       brand: { "@type": "Brand", name: "Compvide" },
       manufacturer: { "@id": ORG_ID },
+      isVariantOf: { "@id": `${BASE_URL}/cimed/#product-group` },
       category: "In Vitro Diagnostic Kit",
       additionalType: "https://schema.org/MedicalDevice",
       image: `${BASE_URL}/images/cimed-products.png`,
@@ -163,8 +172,9 @@ const cimedProductGroup = {
   "@type": "ProductGroup",
   "@id": `${BASE_URL}/cimed/#product-group`,
   name: "CIMED Diagnostic Platform",
+  alternateName: ["CIMED", "Complement Immune Evaluation Diagnostics"],
   description:
-    "A proprietary complement diagnostic platform consisting of three pathway-specific functional ELISA kits for complement activity measurement, inhibition profiling, and pharmacodynamic drug monitoring.",
+    "A proprietary complement diagnostic platform developed by Compvide, consisting of three pathway-specific functional ELISA kits for complement activity measurement, inhibition profiling, and pharmacodynamic drug monitoring.",
   brand: { "@type": "Brand", name: "Compvide" },
   manufacturer: { "@id": ORG_ID },
   hasVariant: [
@@ -198,6 +208,7 @@ const services = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${BASE_URL}/platform/#assay-services`,
     name: "Functional Complement Assays",
     description:
       "Pathway-specific functional assay design and optimization for complement activation and inhibition assessment across all three complement pathways.",
@@ -208,6 +219,7 @@ const services = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${BASE_URL}/platform/#clinical-services`,
     name: "Clinical & Translational Studies",
     description:
       "Clinical study sample testing, pharmacodynamic support, and translational readouts connecting complement mechanism to therapeutic outcomes.",
@@ -218,6 +230,7 @@ const services = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${BASE_URL}/platform/#biomarker-services`,
     name: "Complement Biomarker Analysis",
     description:
       "Complement activation biomarker measurement using validated assays, supporting pharmacodynamic and mechanistic studies for drug development.",

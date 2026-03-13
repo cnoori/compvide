@@ -263,12 +263,16 @@ export default function AboutPage() {
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85 sm:text-xl">
                 Compvide is a biotechnology company focused on advancing
                 complement system science through rigorous assay development,
-                translational research, and diagnostic innovation.
+                translational research, and diagnostic innovation. The
+                company&apos;s proprietary CIMED diagnostic platform is a
+                family of pathway-specific ELISA kits for complement activity
+                measurement and drug monitoring.
               </p>
               <p className="mt-4 text-primary-foreground/75 sm:text-lg">
-                Our work is centered on generating reliable, physiologically
-                relevant complement data to support drug development, precision
-                medicine, and next-generation diagnostic platforms.
+                Compvide&apos;s work is centered on generating reliable,
+                physiologically relevant complement data to support drug
+                development, precision medicine, and next-generation diagnostic
+                platforms.
               </p>
             </div>
           </div>
@@ -424,7 +428,7 @@ export default function AboutPage() {
                     variant="outline"
                     className="border-primary-foreground/25 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
                   >
-                    Explore Our Platform
+                    Explore the Compvide Platform
                   </Button>
                 </Link>
               </div>

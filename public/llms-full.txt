@@ -2,11 +2,20 @@
 
 ## Company Profile
 
-Compvide is a biotechnology company headquartered in Renton, Washington, specializing in the complement system — a critical component of the innate immune system. The company develops functional complement assays, provides clinical study sample analysis services, and manufactures the proprietary CIMED diagnostic platform.
+Compvide is a biotechnology company headquartered in Renton, Washington, specializing in the complement system — a critical component of the innate immune system. Compvide develops functional complement assays, provides clinical study sample analysis services, and is the manufacturer of the proprietary CIMED diagnostic platform. CIMED is a product developed by Compvide — it is not a separate company or organization.
+
+## Entity Relationships
+
+- **Compvide** (Organization): A biotechnology company that manufactures CIMED and provides complement assay services
+- **CIMED Diagnostic Platform** (ProductGroup): A proprietary complement diagnostic product family manufactured by Compvide
+- **CIMED-AP™** (Product): Alternative Pathway kit — a variant of the CIMED platform, manufactured by Compvide
+- **CIMED-CP™** (Product): Classical Pathway kit — a variant of the CIMED platform, manufactured by Compvide
+- **CIMED-LP™** (Product): Lectin Pathway kit — a variant of the CIMED platform, manufactured by Compvide
+- **Compvide Complement Platform** (Services): Compvide's assay development, clinical study, and biomarker services — distinct from the CIMED product
 
 ## CIMED Diagnostic Platform
 
-CIMED (Complement Immune Evaluation Diagnostics) is a family of pathway-specific functional ELISA kits:
+CIMED (Complement Immune Evaluation Diagnostics) is a family of pathway-specific functional ELISA kits developed by Compvide:
 
 - CIMED-AP: Alternative Pathway complement activity measurement
 - CIMED-CP: Classical Pathway complement activity measurement
@@ -44,7 +53,7 @@ Compvide supplies certified human complement serum and plasma optimized for func
 
 ## Target Indications
 
-Complement-mediated diseases addressed by Compvide's platform:
+Complement-mediated diseases addressed by the CIMED diagnostic platform and Compvide's assay services:
 - Paroxysmal Nocturnal Hemoglobinuria (PNH)
 - Atypical Hemolytic Uremic Syndrome (aHUS)
 - Generalized Myasthenia Gravis (gMG)

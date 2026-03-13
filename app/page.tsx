@@ -114,8 +114,8 @@ export default function HomePage() {
               <p className="mt-4 text-base leading-relaxed text-white/85 text-pretty sm:mt-6 sm:text-lg">
                 Advance your complement-targeted therapeutics with functional
                 assays built for translational impact. From assay development to
-                clinical sample analysis, our platform delivers reliable data
-                for drug development.
+                clinical sample analysis, the Compvide Complement Platform
+                delivers reliable data for drug development.
               </p>
               <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:items-start sm:gap-4">
                 <Link href="/contact" className="w-full sm:w-auto">
@@ -132,7 +132,7 @@ export default function HomePage() {
                     variant="outline"
                     className="w-full border-white/40 bg-white/5 text-white hover:bg-white/15 hover:text-white sm:w-auto"
                   >
-                    Explore Our Platform
+                    Explore the Compvide Platform
                   </Button>
                 </Link>
               </div>
@@ -166,9 +166,9 @@ export default function HomePage() {
                 Full Suite of Complement Solutions
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
-                Our proprietary complement assay platform combines deep
-                scientific expertise with rigorous sample handling to deliver
-                reliable, physiologically relevant data.
+                Compvide&apos;s proprietary complement assay platform combines
+                deep scientific expertise with rigorous sample handling to
+                deliver reliable, physiologically relevant data.
               </p>
             </div>
 
@@ -224,9 +224,10 @@ export default function HomePage() {
                 <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80 sm:mt-6 sm:text-base">
                   Compvide is a biotechnology company specializing in functional
                   complement assay development, clinical sample analysis, and
-                  complement diagnostics. The company&apos;s proprietary CIMED
-                  platform provides pathway-specific ELISA kits for complement
-                  activity measurement and pharmacodynamic drug monitoring.
+                  complement diagnostics. Compvide&apos;s proprietary CIMED
+                  diagnostic platform provides pathway-specific ELISA kits for
+                  complement activity measurement and pharmacodynamic drug
+                  monitoring.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80 sm:mt-4 sm:text-base">
                   With deep expertise in complement biology and a commitment to

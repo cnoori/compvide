@@ -103,7 +103,7 @@ export default function PlatformPage() {
                 Complement Assay Services & Platform
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
-                Compvide's platform integrates complement biology expertise,
+                The Compvide Complement Platform integrates complement biology expertise,
                 functional assay design, and rigorous sample integrity control
                 to generate reliable, physiologically relevant data for
                 translational research, drug development, and diagnostic

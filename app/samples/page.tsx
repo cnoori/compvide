@@ -250,7 +250,7 @@ export default function SamplesPage() {
                 </Link>
                 <Link href="/platform">
                   <Button size="lg" variant="outline" className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
-                    View Our Platform
+                    View the Compvide Platform
                   </Button>
                 </Link>
               </div>

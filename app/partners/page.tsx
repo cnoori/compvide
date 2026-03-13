@@ -62,7 +62,7 @@ export default function PartnersPage() {
                   We support pharmaceutical and biotechnology partners developing complement-targeted therapeutics across discovery, preclinical, and translational stages.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Our platform enables partners to generate reliable, physiologically relevant data to guide program decisions.
+                  The Compvide Complement Platform enables partners to generate reliable, physiologically relevant data to guide program decisions.
                 </p>
               </div>
               
@@ -168,7 +168,7 @@ export default function PartnersPage() {
                   Compvide collaborates with diagnostics and industry partners to advance scalable complement-based diagnostic solutions.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Our work in diagnostics builds on Compvide's assay development foundation and includes the advancement of our proprietary platform, CIMED™.
+                  Compvide&apos;s work in diagnostics builds on the company&apos;s assay development foundation and includes the advancement of the proprietary CIMED™ diagnostic platform.
                 </p>
               </div>
               

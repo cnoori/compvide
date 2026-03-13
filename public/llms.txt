@@ -1,12 +1,19 @@
 # Compvide
 
-> Compvide is a biotechnology company specializing in functional complement assay development, clinical sample analysis, and complement diagnostics. The company develops the proprietary CIMED diagnostic platform.
+> Compvide is a biotechnology company specializing in functional complement assay development, clinical sample analysis, and complement diagnostics. Compvide is the manufacturer of the CIMED diagnostic platform. CIMED is a product developed by Compvide — it is not a separate company.
+
+## Entity Relationships
+
+- **Compvide** is an Organization (biotechnology company)
+- **CIMED** (Complement Immune Evaluation Diagnostics) is a ProductGroup manufactured by Compvide
+- **CIMED-AP™**, **CIMED-CP™**, and **CIMED-LP™** are individual Products within the CIMED family
+- The **Compvide Complement Platform** refers to Compvide's assay services (not the CIMED product)
 
 ## Core Products and Services
 
-- [CIMED Diagnostic Platform](https://www.compvide.com/cimed): Pathway-specific ELISA kits (CIMED-AP, CIMED-CP, CIMED-LP) for complement activity measurement and drug monitoring
-- [Complement Assay Platform](https://www.compvide.com/platform): Custom assay development, clinical study support, biomarker programs
-- [Biological Samples](https://www.compvide.com/samples): Certified human complement serum and plasma for research
+- [CIMED Diagnostic Platform](https://www.compvide.com/cimed): Pathway-specific ELISA kits (CIMED-AP, CIMED-CP, CIMED-LP) for complement activity measurement and drug monitoring — developed and manufactured by Compvide
+- [Compvide Complement Platform](https://www.compvide.com/platform): Custom assay development, clinical study support, biomarker programs — provided by Compvide
+- [Biological Samples](https://www.compvide.com/samples): Certified human complement serum and plasma for research — supplied by Compvide
 
 ## About
 
