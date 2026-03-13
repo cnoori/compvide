@@ -90,6 +90,9 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="help" type="text/plain" href="/llms.txt" />
+      </head>
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"

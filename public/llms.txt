@@ -1,0 +1,22 @@
+# Compvide
+
+> Compvide is a biotechnology company specializing in functional complement assay development, clinical sample analysis, and complement diagnostics. The company develops the proprietary CIMED diagnostic platform.
+
+## Core Products and Services
+
+- [CIMED Diagnostic Platform](https://www.compvide.com/cimed): Pathway-specific ELISA kits (CIMED-AP, CIMED-CP, CIMED-LP) for complement activity measurement and drug monitoring
+- [Complement Assay Platform](https://www.compvide.com/platform): Custom assay development, clinical study support, biomarker programs
+- [Biological Samples](https://www.compvide.com/samples): Certified human complement serum and plasma for research
+
+## About
+
+- [About Compvide](https://www.compvide.com/about): Leadership team and scientific advisory board
+- [Partners](https://www.compvide.com/partners): Collaboration with pharma, biotech, and academic institutions
+
+## Contact
+
+- [Contact Us](https://www.compvide.com/contact): General inquiries
+- [Request CIMED Access](https://www.compvide.com/cimed/request-access): Product access requests
+- Email: info@compvide.com
+- Phone: (206) 350-6075
+- Address: 879 Rainier Ave N, STE A103, Renton WA 98057
