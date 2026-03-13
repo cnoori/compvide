@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { JsonLd } from "@/components/json-ld";
+import { cn } from "@/lib/utils";
 
 interface FaqItem {
   question: string;
@@ -18,11 +19,13 @@ interface FaqItem {
 interface FaqSectionProps {
   items: FaqItem[];
   heading?: string;
+  variant?: "default" | "muted";
 }
 
 export function FaqSection({
   items,
   heading = "Frequently Asked Questions",
+  variant = "default",
 }: FaqSectionProps) {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -40,7 +43,7 @@ export function FaqSection({
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="py-12 sm:py-20 lg:py-28">
+      <section className={cn("py-12 sm:py-20 lg:py-28", variant === "muted" && "bg-muted/40")}>
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
             {heading}

@@ -341,8 +341,72 @@ export default function CimedPage() {
           </div>
         </section>
 
-        {/* Use Cases */}
+        {/* Product Specifications */}
         <section className="bg-muted/40 py-12 sm:py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
+                Product Specifications
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
+                Technical specifications for the CIMED complement diagnostic platform.
+              </p>
+            </div>
+            <div className="mt-10 overflow-x-auto sm:mt-16">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">Specification</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">CIMED-AP™</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">CIMED-CP™</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">CIMED-LP™</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Complement Pathway</td>
+                    <td className="px-4 py-3 text-muted-foreground">Alternative</td>
+                    <td className="px-4 py-3 text-muted-foreground">Classical</td>
+                    <td className="px-4 py-3 text-muted-foreground">Lectin</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Assay Format</td>
+                    <td className="px-4 py-3 text-muted-foreground">Functional ELISA</td>
+                    <td className="px-4 py-3 text-muted-foreground">Functional ELISA</td>
+                    <td className="px-4 py-3 text-muted-foreground">Functional ELISA</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Sample Type</td>
+                    <td className="px-4 py-3 text-muted-foreground">Human serum, plasma</td>
+                    <td className="px-4 py-3 text-muted-foreground">Human serum, plasma</td>
+                    <td className="px-4 py-3 text-muted-foreground">Human serum, plasma</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Application</td>
+                    <td className="px-4 py-3 text-muted-foreground">Activity measurement, drug monitoring, inhibition profiling</td>
+                    <td className="px-4 py-3 text-muted-foreground">Activity measurement, drug monitoring, inhibition profiling</td>
+                    <td className="px-4 py-3 text-muted-foreground">Activity measurement, drug monitoring, inhibition profiling</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Regulatory Status</td>
+                    <td className="px-4 py-3 text-muted-foreground">Research Use Only</td>
+                    <td className="px-4 py-3 text-muted-foreground">Research Use Only</td>
+                    <td className="px-4 py-3 text-muted-foreground">Research Use Only</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium text-foreground">Manufacturer</td>
+                    <td className="px-4 py-3 text-muted-foreground">Compvide</td>
+                    <td className="px-4 py-3 text-muted-foreground">Compvide</td>
+                    <td className="px-4 py-3 text-muted-foreground">Compvide</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases */}
+        <section className="py-12 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
@@ -377,7 +441,7 @@ export default function CimedPage() {
         </section>
 
         {/* FAQ */}
-        <FaqSection items={cimedFaqs} />
+        <FaqSection items={cimedFaqs} variant="muted" />
 
         {/* CTA */}
         <section className="bg-primary py-12 sm:py-20 lg:py-24">
