@@ -16,7 +16,44 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/json-ld";
+import { FaqSection } from "@/components/faq-section";
 import { schema } from "@/lib/schema";
+
+const platformFaqs = [
+  {
+    question: "What complement assay services does Compvide offer?",
+    answer:
+      "Compvide offers functional complement assay development, clinical study sample analysis, biomarker programs, and custom assay design spanning all three complement activation pathways (Classical, Lectin, and Alternative). These services support drug discovery, preclinical development, and translational research with pathway-specific functional testing under physiologic serum conditions.",
+  },
+  {
+    question: "Can Compvide develop custom complement assays?",
+    answer:
+      "Yes. Compvide designs bespoke pathway-specific functional assays tailored to specific research needs, including high-serum formats and inhibition assays for therapeutic evaluation. Custom assays are developed in collaboration with partners to align with program-specific scientific and translational goals, covering targets such as C3, C4, Factor D, Factor B, C1q, MBL, and MASP proteins.",
+    richAnswer: (
+      <>
+        Yes. Compvide designs bespoke pathway-specific functional assays tailored to specific research needs, including high-serum formats and inhibition assays for therapeutic evaluation. Custom assays are developed in collaboration with partners to align with program-specific scientific and translational goals, covering targets such as C3, C4, Factor D, Factor B, C1q, MBL, and MASP proteins.{" "}
+        <Link href="/contact#collaborate" className="text-accent underline hover:text-accent/80">
+          Request a collaboration
+        </Link>{" "}
+        to discuss your assay needs.
+      </>
+    ),
+  },
+  {
+    question: "Does Compvide support clinical trials?",
+    answer:
+      "Yes. Compvide provides clinical study sample testing, pharmacodynamic readouts, and translational analysis to support complement-targeted drug development programs. Compvide's services include functional complement monitoring, multi-species capability for translational continuity from preclinical to clinical studies, and rigorous sample handling protocols to ensure data integrity.",
+    richAnswer: (
+      <>
+        Yes. Compvide provides clinical study sample testing, pharmacodynamic readouts, and translational analysis to support complement-targeted drug development programs. Compvide&apos;s services include functional complement monitoring, multi-species capability for translational continuity from preclinical to clinical studies, and rigorous sample handling protocols to ensure data integrity.{" "}
+        <Link href="/contact" className="text-accent underline hover:text-accent/80">
+          Contact the Compvide team
+        </Link>{" "}
+        to learn more.
+      </>
+    ),
+  },
+];
 
 export const metadata: Metadata = {
   title: "Complement Assay Services | Platform & Custom Development",
@@ -441,6 +478,8 @@ export default function PlatformPage() {
             </div>
           </div>
         </section>
+        {/* FAQ */}
+        <FaqSection items={platformFaqs} />
       </main>
 
       <Footer />

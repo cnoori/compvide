@@ -14,7 +14,54 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/json-ld";
+import { FaqSection } from "@/components/faq-section";
 import { schema } from "@/lib/schema";
+
+const cimedFaqs = [
+  {
+    question: "What is CIMED?",
+    answer:
+      "CIMED is a proprietary complement diagnostic platform developed by Compvide. It consists of three pathway-specific functional ELISA kits — CIMED-AP (Alternative Pathway), CIMED-CP (Classical Pathway), and CIMED-LP (Lectin Pathway). These kits are designed for complement activity measurement, pharmacodynamic drug monitoring, complement inhibition profiling, and biomarker development in clinical trials. CIMED products are currently for research use only.",
+  },
+  {
+    question: "What complement pathways does CIMED measure?",
+    answer:
+      "CIMED covers all three complement activation pathways: Classical (CIMED-CP), Lectin (CIMED-LP), and Alternative (CIMED-AP). Each kit isolates a single pathway to deliver clean, pathway-specific functional data without crosstalk, enabling mechanistic assessment of complement activation and inhibition under physiologic serum conditions.",
+  },
+  {
+    question: "What is CIMED used for?",
+    answer:
+      "CIMED is used for complement activity measurement, pharmacodynamic (PD) drug monitoring in clinical trials, complement inhibition profiling, and biomarker development in complement-mediated diseases. Compvide designed CIMED to support complement-targeted drug development programs from preclinical research through translational studies.",
+  },
+  {
+    question: "Is CIMED FDA approved?",
+    answer:
+      "CIMED products are currently designated for Research Use Only (RUO). FDA approval is in progress. Compvide has developed CIMED under rigorous quality standards to support translational and clinical research while regulatory approvals are pursued.",
+  },
+  {
+    question: "What diseases can CIMED help monitor?",
+    answer:
+      "CIMED supports research and monitoring of complement-mediated diseases including paroxysmal nocturnal hemoglobinuria (PNH), atypical hemolytic uremic syndrome (aHUS), generalized myasthenia gravis (gMG), systemic lupus erythematosus (SLE), C3 glomerulopathy (C3G), and neuromyelitis optica spectrum disorder (NMOSD). CIMED kits provide pathway-specific functional readouts relevant to understanding disease mechanisms and therapeutic responses.",
+  },
+  {
+    question: "How do I get access to CIMED?",
+    answer:
+      "Researchers and clinical teams can request access to the CIMED diagnostic platform through the CIMED access request form on the Compvide website or by contacting Compvide directly at info@compvide.com. The Compvide scientific team works with partners to determine the appropriate CIMED kit configuration for specific research or clinical trial needs.",
+    richAnswer: (
+      <>
+        Researchers and clinical teams can request access to the CIMED diagnostic platform through the{" "}
+        <Link href="/cimed/request-access" className="text-accent underline hover:text-accent/80">
+          CIMED access request form
+        </Link>{" "}
+        or by contacting Compvide directly at{" "}
+        <a href="mailto:info@compvide.com" className="text-accent underline hover:text-accent/80">
+          info@compvide.com
+        </a>
+        . The Compvide scientific team works with partners to determine the appropriate CIMED kit configuration for specific research or clinical trial needs.
+      </>
+    ),
+  },
+];
 
 export const metadata: Metadata = {
   title: "CIMED Complement Diagnostic Platform | ELISA Kits",
@@ -328,6 +375,9 @@ export default function CimedPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FaqSection items={cimedFaqs} />
 
         {/* CTA */}
         <section className="bg-primary py-12 sm:py-20 lg:py-24">

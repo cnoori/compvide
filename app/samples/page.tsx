@@ -5,7 +5,30 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { JsonLd } from "@/components/json-ld"
+import { FaqSection } from "@/components/faq-section"
 import { schema } from "@/lib/schema"
+
+const samplesFaqs = [
+  {
+    question: "What biological samples does Compvide provide?",
+    answer:
+      "Compvide supplies certified human complement serum and plasma optimized for functional complement assays. Available sample types include standard complement-active serum, pathway-deficient sera, and heat-inactivated serum for control studies. Plasma is available as single-donor, pooled, or bulk volumes to meet diverse research and manufacturing requirements.",
+    richAnswer: (
+      <>
+        Compvide supplies certified human complement serum and plasma optimized for functional complement assays. Available sample types include standard complement-active serum, pathway-deficient sera, and heat-inactivated serum for control studies. Plasma is available as single-donor, pooled, or bulk volumes to meet diverse research and manufacturing requirements.{" "}
+        <Link href="/contact" className="text-accent underline hover:text-accent/80">
+          Contact Compvide
+        </Link>{" "}
+        for specifications and pricing.
+      </>
+    ),
+  },
+  {
+    question: "How is Compvide serum qualified?",
+    answer:
+      "Each Compvide serum lot includes verified CH50 activity, lot-specific functional testing of classical, lectin, and alternative pathway activity, and full preparation, handling, and QC documentation. Compvide has developed specialized preparation methods that preserve full complement activity, ensuring reproducible results for downstream functional complement assays.",
+  },
+]
 
 export const metadata: Metadata = {
   title: "Human Complement Serum & Plasma | Biological Samples",
@@ -205,6 +228,9 @@ export default function SamplesPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FaqSection items={samplesFaqs} />
 
         {/* CTA Section */}
         <section className="bg-primary py-16 sm:py-20">
