@@ -5,6 +5,13 @@ import { Footer } from "@/components/layout/footer"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Compvide's privacy policy explaining how we collect, use, and protect your information.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function PrivacyPage() {

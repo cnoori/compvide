@@ -4,16 +4,51 @@ import { ArrowRight, Droplets, FileCheck, TestTubes, AlertCircle } from "lucide-
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { JsonLd } from "@/components/json-ld"
+import { FaqSection } from "@/components/faq-section"
+import { schema } from "@/lib/schema"
+
+const samplesFaqs = [
+  {
+    question: "What biological samples does Compvide provide?",
+    answer:
+      "Compvide supplies certified human complement serum and plasma optimized for functional complement assays. Available sample types include standard complement-active serum, pathway-deficient sera, and heat-inactivated serum for control studies. Plasma is available as single-donor, pooled, or bulk volumes to meet diverse research and manufacturing requirements.",
+    richAnswer: (
+      <>
+        Compvide supplies certified human complement serum and plasma optimized for functional complement assays. Available sample types include standard complement-active serum, pathway-deficient sera, and heat-inactivated serum for control studies. Plasma is available as single-donor, pooled, or bulk volumes to meet diverse research and manufacturing requirements.{" "}
+        <Link href="/contact" className="text-accent underline hover:text-accent/80">
+          Contact Compvide
+        </Link>{" "}
+        for specifications and pricing.
+      </>
+    ),
+  },
+  {
+    question: "How is Compvide serum qualified?",
+    answer:
+      "Each Compvide serum lot includes verified CH50 activity, lot-specific functional testing of classical, lectin, and alternative pathway activity, and full preparation, handling, and QC documentation. Compvide has developed specialized preparation methods that preserve full complement activity, ensuring reproducible results for downstream functional complement assays.",
+  },
+]
 
 export const metadata: Metadata = {
-  title: "Biological Samples | High-Integrity Serum & Plasma",
-  description: "Compvide provides certified human serum and plasma optimized for functional complement assays, supporting reproducible complement research and complement-targeted drug development.",
-  keywords: ["human serum", "plasma samples", "complement research", "biological samples", "CH50 testing", "complement activity"],
+  title: "Human Complement Serum & Plasma | Biological Samples",
+  description: "Source high-integrity human complement serum and plasma from Compvide. Research-grade biological samples optimized for functional complement assays.",
+  keywords: ["human complement serum", "complement-active serum", "research-grade serum", "plasma samples", "biological samples", "CH50 testing", "complement activity", "clinical sample"],
+  openGraph: {
+    title: "Biological Samples | High-Integrity Serum & Plasma",
+    description:
+      "Certified human serum and plasma optimized for functional complement assays and translational research.",
+    url: "/samples",
+  },
+  alternates: {
+    canonical: "/samples",
+  },
 }
 
 export default function SamplesPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={schema.breadcrumb([{ name: "Home", path: "/" }, { name: "Biological Samples", path: "/samples" }])} />
       <Header />
       
       <main className="flex-1">
@@ -22,7 +57,7 @@ export default function SamplesPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-                High-Integrity Biological Samples for Complement Research
+                Human Complement Serum & Plasma for Research
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
                 Compvide provides certified human serum and plasma optimized for functional complement assays, supporting reproducible complement research and complement-targeted drug development.
@@ -43,7 +78,17 @@ export default function SamplesPage() {
                 <h2 className="mt-4 font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                   Certified Human Complement Serum
                 </h2>
-                <p className="mt-6 text-muted-foreground leading-relaxed">
+                <h3 className="mt-6 text-base font-semibold text-foreground sm:text-lg">
+                  What is complement-active serum?
+                </h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  Complement-active serum is human serum that has been collected
+                  and processed using specialized methods to preserve the full
+                  functional activity of all complement pathways. Standard serum
+                  preparation often causes unintended complement activation and
+                  depletion, compromising downstream assay results.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-relaxed">
                   There is limited guidance on proper serum preparation for functional complement assays. Mishandling can lead to unintended complement activation and depletion.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -184,6 +229,9 @@ export default function SamplesPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <FaqSection items={samplesFaqs} />
+
         {/* CTA Section */}
         <section className="bg-primary py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -202,7 +250,7 @@ export default function SamplesPage() {
                 </Link>
                 <Link href="/platform">
                   <Button size="lg" variant="outline" className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
-                    View Our Platform
+                    View the Compvide Platform
                   </Button>
                 </Link>
               </div>

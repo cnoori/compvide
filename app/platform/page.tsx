@@ -15,23 +15,83 @@ import {
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/json-ld";
+import { FaqSection } from "@/components/faq-section";
+import { schema } from "@/lib/schema";
+
+const platformFaqs = [
+  {
+    question: "What complement assay services does Compvide offer?",
+    answer:
+      "Compvide offers functional complement assay development, clinical study sample analysis, biomarker programs, and custom assay design spanning all three complement activation pathways (Classical, Lectin, and Alternative). These services support drug discovery, preclinical development, and translational research with pathway-specific functional testing under physiologic serum conditions.",
+  },
+  {
+    question: "Can Compvide develop custom complement assays?",
+    answer:
+      "Yes. Compvide designs bespoke pathway-specific functional assays tailored to specific research needs, including high-serum formats and inhibition assays for therapeutic evaluation. Custom assays are developed in collaboration with partners to align with program-specific scientific and translational goals, covering targets such as C3, C4, Factor D, Factor B, C1q, MBL, and MASP proteins.",
+    richAnswer: (
+      <>
+        Yes. Compvide designs bespoke pathway-specific functional assays tailored to specific research needs, including high-serum formats and inhibition assays for therapeutic evaluation. Custom assays are developed in collaboration with partners to align with program-specific scientific and translational goals, covering targets such as C3, C4, Factor D, Factor B, C1q, MBL, and MASP proteins.{" "}
+        <Link href="/contact#collaborate" className="text-accent underline hover:text-accent/80">
+          Request a collaboration
+        </Link>{" "}
+        to discuss your assay needs.
+      </>
+    ),
+  },
+  {
+    question: "Does Compvide support clinical trials?",
+    answer:
+      "Yes. Compvide provides clinical study sample testing, pharmacodynamic readouts, and translational analysis to support complement-targeted drug development programs. Compvide's services include functional complement monitoring, multi-species capability for translational continuity from preclinical to clinical studies, and rigorous sample handling protocols to ensure data integrity.",
+    richAnswer: (
+      <>
+        Yes. Compvide provides clinical study sample testing, pharmacodynamic readouts, and translational analysis to support complement-targeted drug development programs. Compvide&apos;s services include functional complement monitoring, multi-species capability for translational continuity from preclinical to clinical studies, and rigorous sample handling protocols to ensure data integrity.{" "}
+        <Link href="/contact" className="text-accent underline hover:text-accent/80">
+          Contact the Compvide team
+        </Link>{" "}
+        to learn more.
+      </>
+    ),
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Platform | Complement Assay & Diagnostic Innovation",
+  title: "Complement Assay Services | Platform & Custom Development",
   description:
-    "Compvide's platform integrates complement biology expertise, functional assay design, and rigorous sample integrity control to generate reliable, physiologically relevant data for translational research.",
+    "Explore Compvide's complement assay services: custom assay development, pathway-specific functional assays, high-serum testing, and biomarker analysis programs.",
   keywords: [
-    "complement assay platform",
-    "CIMED diagnostics",
+    "complement assay services",
+    "custom assay development",
+    "pathway-specific assays",
+    "high-serum testing",
+    "biomarker programs",
+    "complement CRO",
     "functional assays",
     "biomarker analysis",
-    "clinical studies",
   ],
+  openGraph: {
+    title: "The Compvide Complement Platform — Assays, Services & Innovation",
+    description:
+      "Full suite of complement solutions: functional assays, clinical study support, biomarker programs, and custom assay development.",
+    url: "/platform",
+    images: [
+      {
+        url: "/og/platform.png",
+        width: 1200,
+        height: 630,
+        alt: "The Compvide Complement Platform — Assays, Services & Innovation",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/platform",
+  },
 };
 
 export default function PlatformPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={[...schema.services, schema.breadcrumb([{ name: "Home", path: "/" }, { name: "Platform", path: "/platform" }])]} />
       <Header />
 
       <main className="flex-1">
@@ -40,10 +100,10 @@ export default function PlatformPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-                The Compvide Complement Platform
+                Complement Assay Services & Platform
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
-                Compvide's platform integrates complement biology expertise,
+                The Compvide Complement Platform integrates complement biology expertise,
                 functional assay design, and rigorous sample integrity control
                 to generate reliable, physiologically relevant data for
                 translational research, drug development, and diagnostic
@@ -63,12 +123,15 @@ export default function PlatformPage() {
                   Core Platform
                 </div>
                 <h2 className="mt-4 font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  Complement Assay Platform
+                  What is the Compvide Complement Assay Platform?
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed">
-                  At the core of Compvide is a functional complement assay
-                  platform spanning all three activation pathways and terminal
-                  pathway biology.
+                  The Compvide Complement Platform offers end-to-end complement
+                  assay services including custom assay development, clinical
+                  study sample analysis, biomarker programs, and
+                  pathway-specific functional testing across all three
+                  complement activation pathways (Classical, Lectin, and
+                  Alternative).
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                   This comprehensive pathway coverage enables mechanistic
@@ -415,6 +478,8 @@ export default function PlatformPage() {
             </div>
           </div>
         </section>
+        {/* FAQ */}
+        <FaqSection items={platformFaqs} />
       </main>
 
       <Footer />

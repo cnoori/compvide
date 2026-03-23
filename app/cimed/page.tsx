@@ -13,22 +13,87 @@ import {
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/json-ld";
+import { FaqSection } from "@/components/faq-section";
+import { schema } from "@/lib/schema";
+
+const cimedFaqs = [
+  {
+    question: "What is CIMED?",
+    answer:
+      "CIMED is a proprietary complement diagnostic platform developed by Compvide. It consists of three pathway-specific functional ELISA kits — CIMED-AP (Alternative Pathway), CIMED-CP (Classical Pathway), and CIMED-LP (Lectin Pathway). These kits are designed for complement activity measurement, pharmacodynamic drug monitoring, complement inhibition profiling, and biomarker development in clinical trials. CIMED products are currently for research use only.",
+  },
+  {
+    question: "What complement pathways does CIMED measure?",
+    answer:
+      "CIMED covers all three complement activation pathways: Classical (CIMED-CP), Lectin (CIMED-LP), and Alternative (CIMED-AP). Each kit isolates a single pathway to deliver clean, pathway-specific functional data without crosstalk, enabling mechanistic assessment of complement activation and inhibition under physiologic serum conditions.",
+  },
+  {
+    question: "What is CIMED used for?",
+    answer:
+      "CIMED is used for complement activity measurement, pharmacodynamic (PD) drug monitoring in clinical trials, complement inhibition profiling, and biomarker development in complement-mediated diseases. Compvide designed CIMED to support complement-targeted drug development programs from preclinical research through translational studies.",
+  },
+  {
+    question: "Is CIMED FDA approved?",
+    answer:
+      "CIMED products are currently designated for Research Use Only (RUO). FDA approval is in progress. Compvide has developed CIMED under rigorous quality standards to support translational and clinical research while regulatory approvals are pursued.",
+  },
+  {
+    question: "What diseases can CIMED help monitor?",
+    answer:
+      "CIMED supports research and monitoring of complement-mediated diseases including paroxysmal nocturnal hemoglobinuria (PNH), atypical hemolytic uremic syndrome (aHUS), generalized myasthenia gravis (gMG), systemic lupus erythematosus (SLE), C3 glomerulopathy (C3G), and neuromyelitis optica spectrum disorder (NMOSD). CIMED kits provide pathway-specific functional readouts relevant to understanding disease mechanisms and therapeutic responses.",
+  },
+  {
+    question: "How do I get access to CIMED?",
+    answer:
+      "Researchers and clinical teams can request access to the CIMED diagnostic platform through the CIMED access request form on the Compvide website or by contacting Compvide directly at info@compvide.com. The Compvide scientific team works with partners to determine the appropriate CIMED kit configuration for specific research or clinical trial needs.",
+    richAnswer: (
+      <>
+        Researchers and clinical teams can request access to the CIMED diagnostic platform through the{" "}
+        <Link href="/cimed/request-access" className="text-accent underline hover:text-accent/80">
+          CIMED access request form
+        </Link>{" "}
+        or by contacting Compvide directly at{" "}
+        <a href="mailto:info@compvide.com" className="text-accent underline hover:text-accent/80">
+          info@compvide.com
+        </a>
+        . The Compvide scientific team works with partners to determine the appropriate CIMED kit configuration for specific research or clinical trial needs.
+      </>
+    ),
+  },
+];
 
 export const metadata: Metadata = {
-  title: "CIMED Diagnostic Platform",
+  title: "CIMED Complement Diagnostic Platform | ELISA Kits",
   description:
-    "CIMED is a proprietary complement activity and drug monitoring platform developed by Compvide. Functional ELISA-based kits for classical, lectin, and alternative pathway analysis.",
+    "CIMED is Compvide's proprietary complement diagnostic platform — pathway-specific ELISA kits for complement activity measurement and drug monitoring.",
   keywords: [
-    "CIMED",
-    "complement diagnostics",
+    "CIMED ELISA",
+    "complement diagnostic platform",
+    "complement drug monitoring",
+    "pathway-specific ELISA kit",
     "CIMED-CP",
     "CIMED-LP",
     "CIMED-AP",
-    "complement ELISA",
-    "drug monitoring",
     "complement pathway",
-    "functional assay",
   ],
+  openGraph: {
+    title: "CIMED Diagnostic Platform — Pathway-Specific Complement ELISA Kits",
+    description:
+      "Functional ELISA-based kits for classical, lectin, and alternative pathway complement analysis and drug monitoring.",
+    url: "/cimed",
+    images: [
+      {
+        url: "/og/cimed.png",
+        width: 1200,
+        height: 630,
+        alt: "CIMED Diagnostic Platform — Pathway-Specific Complement ELISA Kits",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/cimed",
+  },
 };
 
 const products = [
@@ -100,6 +165,7 @@ const advantages = [
 export default function CimedPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={[schema.cimedProductGroup, ...schema.cimedProducts(products), schema.breadcrumb([{ name: "Home", path: "/" }, { name: "CIMED", path: "/cimed" }])]} />
       <Header />
       <main className="flex-1">
         {/* Hero */}
@@ -111,7 +177,7 @@ export default function CimedPage() {
                   Advanced Complement Diagnostics
                 </div>
                 <h1 className="text-2xl font-bold leading-tight tracking-tight text-primary-foreground text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                  CIMED Diagnostic Platform
+                  CIMED Complement Diagnostic Platform
                 </h1>
                 <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/80 text-pretty sm:mt-6 sm:text-base lg:mx-0 lg:text-lg">
                   A proprietary suite for physiologic, high-serum complement
@@ -165,18 +231,23 @@ export default function CimedPage() {
                 What is CIMED?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
-                CIMED™ (Complement Inhibition Monitoring and Efficacy
-                Determination) is a proprietary platform engineered to measure
-                complement activity under physiologic, high-serum conditions.
-                Through pathway-resolved functional assays, it delivers
-                mechanistic insights directly relevant to therapeutic monitoring
-                and drug development.
+                CIMED is an in vitro diagnostic platform designed for clinical
+                and research use in complement-mediated disease monitoring.
+                Developed by Compvide, it consists of three pathway-specific
+                functional ELISA kits — CIMED-AP (Alternative Pathway), CIMED-CP
+                (Classical Pathway), and CIMED-LP (Lectin Pathway) — designed
+                for complement activity measurement, inhibition profiling, and
+                pharmacodynamic drug monitoring in clinical trials.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Unlike conventional complement assays, CIMED kits are engineered
-                to deliver clean, pathway-isolated data that is directly
-                relevant to drug development and pharmacodynamic monitoring in
-                clinical trials.
+                to deliver clean, pathway-isolated data under physiologic,
+                high-serum conditions — directly relevant to drug development
+                and therapeutic monitoring.
+              </p>
+              <p className="mt-4 text-xs leading-relaxed text-muted-foreground/70 italic">
+                CIMED products are for in vitro research use only. Not approved
+                for diagnostic or clinical use.
               </p>
             </div>
           </div>
@@ -270,8 +341,72 @@ export default function CimedPage() {
           </div>
         </section>
 
-        {/* Use Cases */}
+        {/* Product Specifications */}
         <section className="bg-muted/40 py-12 sm:py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
+                Product Specifications
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
+                Technical specifications for the CIMED complement diagnostic platform.
+              </p>
+            </div>
+            <div className="mt-10 overflow-x-auto sm:mt-16">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">Specification</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">CIMED-AP™</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">CIMED-CP™</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">CIMED-LP™</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Complement Pathway</td>
+                    <td className="px-4 py-3 text-muted-foreground">Alternative</td>
+                    <td className="px-4 py-3 text-muted-foreground">Classical</td>
+                    <td className="px-4 py-3 text-muted-foreground">Lectin</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Assay Format</td>
+                    <td className="px-4 py-3 text-muted-foreground">Functional ELISA</td>
+                    <td className="px-4 py-3 text-muted-foreground">Functional ELISA</td>
+                    <td className="px-4 py-3 text-muted-foreground">Functional ELISA</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Sample Type</td>
+                    <td className="px-4 py-3 text-muted-foreground">Human serum, plasma</td>
+                    <td className="px-4 py-3 text-muted-foreground">Human serum, plasma</td>
+                    <td className="px-4 py-3 text-muted-foreground">Human serum, plasma</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Application</td>
+                    <td className="px-4 py-3 text-muted-foreground">Activity measurement, drug monitoring, inhibition profiling</td>
+                    <td className="px-4 py-3 text-muted-foreground">Activity measurement, drug monitoring, inhibition profiling</td>
+                    <td className="px-4 py-3 text-muted-foreground">Activity measurement, drug monitoring, inhibition profiling</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">Regulatory Status</td>
+                    <td className="px-4 py-3 text-muted-foreground">Research Use Only</td>
+                    <td className="px-4 py-3 text-muted-foreground">Research Use Only</td>
+                    <td className="px-4 py-3 text-muted-foreground">Research Use Only</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium text-foreground">Manufacturer</td>
+                    <td className="px-4 py-3 text-muted-foreground">Compvide</td>
+                    <td className="px-4 py-3 text-muted-foreground">Compvide</td>
+                    <td className="px-4 py-3 text-muted-foreground">Compvide</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases */}
+        <section className="py-12 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
@@ -304,6 +439,9 @@ export default function CimedPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FaqSection items={cimedFaqs} variant="muted" />
 
         {/* CTA */}
         <section className="bg-primary py-12 sm:py-20 lg:py-24">

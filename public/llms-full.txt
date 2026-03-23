@@ -1,0 +1,69 @@
+# Compvide — Comprehensive Company Overview
+
+## Company Profile
+
+Compvide is a biotechnology company headquartered in Renton, Washington, specializing in the complement system — a critical component of the innate immune system. Compvide develops functional complement assays, provides clinical study sample analysis services, and is the manufacturer of the proprietary CIMED diagnostic platform. CIMED is a product developed by Compvide — it is not a separate company or organization.
+
+## Entity Relationships
+
+- **Compvide** (Organization): A biotechnology company that manufactures CIMED and provides complement assay services
+- **CIMED Diagnostic Platform** (ProductGroup): A proprietary complement diagnostic product family manufactured by Compvide
+- **CIMED-AP™** (Product): Alternative Pathway kit — a variant of the CIMED platform, manufactured by Compvide
+- **CIMED-CP™** (Product): Classical Pathway kit — a variant of the CIMED platform, manufactured by Compvide
+- **CIMED-LP™** (Product): Lectin Pathway kit — a variant of the CIMED platform, manufactured by Compvide
+- **Compvide Complement Platform** (Services): Compvide's assay development, clinical study, and biomarker services — distinct from the CIMED product
+
+## CIMED Diagnostic Platform
+
+CIMED (Complement Immune Evaluation Diagnostics) is a family of pathway-specific functional ELISA kits developed by Compvide:
+
+- CIMED-AP: Alternative Pathway complement activity measurement
+- CIMED-CP: Classical Pathway complement activity measurement
+- CIMED-LP: Lectin Pathway complement activity measurement
+
+Applications include pharmacodynamic drug monitoring in clinical trials, complement inhibition profiling, biomarker development, and preclinical research support.
+
+Current regulatory status: Research Use Only (RUO). FDA approval pending.
+
+## Scientific Services
+
+1. Functional Complement Assays — design and optimization of pathway-specific assays including high-serum and inhibition formats
+2. Clinical & Translational Studies — clinical trial sample testing, PD support, and translational readouts
+3. Complement Biomarker Analysis — biomarker program support for drug development
+4. Custom Assay Development — bespoke assay design for specific research needs
+
+## Biological Samples
+
+Compvide supplies certified human complement serum and plasma optimized for functional complement assays, including:
+- Normal human complement serum with verified CH50 activity
+- Pathway-depleted and heat-inactivated variants
+- Plasma samples in citrate, EDTA, and heparin formats
+
+## Leadership
+
+- Dr. Sadam Yaseen, Ph.D. — CEO, complement biologist with 25+ years of experience
+- Dr. Clark Tedford, Ph.D. — COO
+- Dr. Amar Sethi, M.D., Ph.D. — CMO
+
+## Scientific Advisory Board
+
+- Prof. Wilhelm Schwaeble, Ph.D. — complement biology
+- Prof. Peter Garred, M.D., DMSc — University of Copenhagen
+- Dr. Youssif Ali, Ph.D. — complement research
+
+## Target Indications
+
+Complement-mediated diseases addressed by the CIMED diagnostic platform and Compvide's assay services:
+- Paroxysmal Nocturnal Hemoglobinuria (PNH)
+- Atypical Hemolytic Uremic Syndrome (aHUS)
+- Generalized Myasthenia Gravis (gMG)
+- Systemic Lupus Erythematosus (SLE)
+- C3 Glomerulopathy (C3G)
+- Neuromyelitis Optica Spectrum Disorder (NMOSD)
+
+## Contact
+
+- Website: https://www.compvide.com
+- Email: info@compvide.com
+- Phone: (206) 350-6075
+- Address: 879 Rainier Ave N, STE A103, Renton, WA 98057

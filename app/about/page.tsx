@@ -5,6 +5,8 @@ import { ArrowRight, Eye, Target, Heart, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/json-ld";
+import { schema } from "@/lib/schema";
 import {
   Accordion,
   AccordionContent,
@@ -13,16 +15,35 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-  title: "About Compvide | Leadership & Mission",
+  title: "About Compvide | Complement Biotechnology Leadership",
   description:
-    "Compvide is a biotechnology company focused on advancing complement system science through rigorous assay development, translational research, and diagnostic innovation.",
+    "Compvide is a complement biotechnology company led by world-class complement biologists and clinical researchers. Meet our leadership and advisory board.",
   keywords: [
-    "Compvide",
-    "biotechnology company",
-    "complement diagnostics",
-    "leadership team",
+    "complement biotechnology company",
+    "complement science leadership",
+    "complement biology experts",
     "scientific advisory board",
+    "Compvide",
+    "complement diagnostics",
+    "immunology",
   ],
+  openGraph: {
+    title: "About Compvide — Leadership in Complement Biology",
+    description:
+      "World-class team of complement biologists, clinical researchers, and diagnostics innovators advancing complement science.",
+    url: "/about",
+    images: [
+      {
+        url: "/og/about.png",
+        width: 1200,
+        height: 630,
+        alt: "About Compvide — Leadership in Complement Biology",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const leadershipTeam = [
@@ -30,6 +51,7 @@ const leadershipTeam = [
     name: "Dr. Sadam Yaseen, Ph.D.",
     role: "President and Chief Executive Officer",
     image: "/images/dr-yassen.jpeg",
+    imageAlt: "Dr. Sadam Yaseen, Ph.D. — CEO of Compvide, complement biologist",
     shortBio:
       "Dr. Sadam Yaseen is President and Chief Executive Officer of Compvide, bringing deep scientific and translational expertise in complement system biology, immunology, and diagnostic assay development.",
     fullBio: `Dr. Sadam Yaseen is President and Chief Executive Officer of Compvide, bringing deep scientific and translational expertise in complement system biology, immunology, and diagnostic assay development. At Compvide, he leads the company's mission to establish a new global standard for complement diagnostics and pharmacodynamic drug monitoring.
@@ -42,6 +64,7 @@ Dr. Yaseen earned his Ph.D. in Immunology from the University of Leicester (UK),
     name: "Dr. Clark Tedford, Ph.D.",
     role: "Board Director",
     image: "/images/clark.png",
+    imageAlt: "Dr. Clark Tedford, Ph.D. — COO of Compvide, biotechnology leader",
     shortBio:
       "Dr. Clark Tedford is a biotechnology executive and inventor with decades of leadership experience spanning diagnostics, therapeutics, and medical devices.",
     fullBio: `Dr. Clark Tedford is a biotechnology executive and inventor with decades of leadership experience spanning diagnostics, therapeutics, and medical devices. As a Board Director of Compvide, he brings deep strategic, scientific, and commercialization expertise to support the company's mission to advance next-generation complement diagnostics and drug monitoring.
@@ -54,6 +77,7 @@ Earlier in his career, Dr. Tedford spent seven years at Omeros Corporation as Vi
     name: "Dr. Amar Sethi, M.D., Ph.D.",
     role: "Board Director",
     image: "/images/yusuf.jpeg",
+    imageAlt: "Dr. Amar Sethi, M.D., Ph.D. — CMO of Compvide, clinical researcher",
     shortBio:
       "Dr. Amar Sethi is a physician–scientist and senior biotechnology executive with nearly three decades of experience leading clinical development, translational science, and biomarker innovation.",
     fullBio: `Dr. Amar Sethi is a physician–scientist and senior biotechnology executive with nearly three decades of experience leading clinical development, translational science, and biomarker innovation across biotechnology, diagnostics, and contract research organizations. As a Board Director of Compvide, he brings deep clinical, regulatory, and strategic expertise to support the company's advancement of precision complement diagnostics and drug monitoring.
@@ -69,6 +93,7 @@ const advisoryBoard = [
     name: "Professor Wilhelm Schwaeble, Ph.D.",
     role: "Scientific Advisory Board Member",
     image: "/images/wilhelm.jpg",
+    imageAlt: "Professor Wilhelm Schwaeble, Ph.D. — Scientific Advisor, complement biology expert",
     shortBio:
       "Professor Wilhelm Schwaeble is a globally recognized leader in complement immunology, with more than three decades of pioneering contributions.",
     fullBio: `Professor Wilhelm Schwaeble is a globally recognized leader in complement immunology, with more than three decades of pioneering contributions that have shaped modern understanding of innate immune defense. He currently serves as Director of Research at the University of Cambridge (Department of Veterinary Medicine) and previously held the Chair of Immunology at the University of Leicester, where his work established new foundational concepts in complement biology and immune regulation.
@@ -81,6 +106,7 @@ Professor Schwaeble has authored numerous highly cited publications and has serv
     name: "Professor Peter Garred, M.D., DMSc",
     role: "Scientific Advisory Board Member",
     image: "/images/peter.png",
+    imageAlt: "Professor Peter Garred, M.D., DMSc — Scientific Advisor, University of Copenhagen",
     shortBio:
       "Professor Peter Garred is an internationally recognized leader in clinical immunology and molecular medicine, with seminal contributions to the understanding of the lectin pathway of complement.",
     fullBio: `Professor Peter Garred is an internationally recognized leader in clinical immunology and molecular medicine, with seminal contributions to the understanding of the lectin pathway of complement. He serves as Chair Professor at the University of Copenhagen and Consultant at Rigshospitalet, where his work has helped define the molecular and genetic foundations of innate immunity in health and disease.
@@ -93,6 +119,7 @@ Professor Garred has published more than 420 peer-reviewed papers in leading jou
     name: "Dr. Youssif Ali, Ph.D.",
     role: "Scientific Advisory Board Member",
     image: "/images/yusuf1.jpeg",
+    imageAlt: "Dr. Youssif Ali, Ph.D. — Scientific Advisor, complement research",
 
     shortBio:
       "Dr. Youssif Ali is a senior research scientist at the University of Cambridge with more than 20 years of experience in complement biology and immune regulation.",
@@ -122,6 +149,7 @@ function BioAccordion({
     name: string;
     role: string;
     image?: string;
+    imageAlt?: string;
     shortBio: string;
     fullBio: string;
   }>;
@@ -159,7 +187,7 @@ function BioAccordion({
                 {member.image ? (
                   <Image
                     src={member.image}
-                    alt={member.name}
+                    alt={member.imageAlt ?? member.name}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 640px) 100vw, 260px"
@@ -217,8 +245,11 @@ function BioAccordion({
 }
 
 export default function AboutPage() {
+  const allMembers = [...leadershipTeam, ...advisoryBoard];
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <JsonLd data={[...schema.persons(allMembers), schema.breadcrumb([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])]} />
       <Header />
 
       <main className="flex-1">
@@ -232,12 +263,16 @@ export default function AboutPage() {
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85 sm:text-xl">
                 Compvide is a biotechnology company focused on advancing
                 complement system science through rigorous assay development,
-                translational research, and diagnostic innovation.
+                translational research, and diagnostic innovation. The
+                company&apos;s proprietary CIMED diagnostic platform is a
+                family of pathway-specific ELISA kits for complement activity
+                measurement and drug monitoring.
               </p>
               <p className="mt-4 text-primary-foreground/75 sm:text-lg">
-                Our work is centered on generating reliable, physiologically
-                relevant complement data to support drug development, precision
-                medicine, and next-generation diagnostic platforms.
+                Compvide&apos;s work is centered on generating reliable,
+                physiologically relevant complement data to support drug
+                development, precision medicine, and next-generation diagnostic
+                platforms.
               </p>
             </div>
           </div>
@@ -393,7 +428,7 @@ export default function AboutPage() {
                     variant="outline"
                     className="border-primary-foreground/25 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
                   >
-                    Explore Our Platform
+                    Explore the Compvide Platform
                   </Button>
                 </Link>
               </div>

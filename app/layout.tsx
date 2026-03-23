@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.compvide.com"),
   title: {
     default: "Compvide | Complement Assay Development & Clinical Sample Analysis",
     template: "%s | Compvide",
@@ -47,14 +48,26 @@ export const metadata: Metadata = {
     title: "Compvide | Complement Assay Development & Clinical Sample Analysis",
     description:
       "Advancing complement assay development, translational research, and diagnostic innovation for drug development and precision medicine.",
+    images: [
+      {
+        url: "/og/default.png",
+        width: 1200,
+        height: 630,
+        alt: "Compvide — Complement Assay Development & Diagnostic Innovation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Compvide | Complement Assay Development",
     description:
       "Biotechnology company focused on functional complement assays and diagnostic innovation.",
+    images: ["/og/default.png"],
   },
-    generator: 'v0.app'
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
+  },
 }
 
 export const viewport: Viewport = {
@@ -77,6 +90,9 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="help" type="text/plain" href="/llms.txt" />
+      </head>
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"

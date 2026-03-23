@@ -1,0 +1,13 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Compvide",
+  "name_for_model": "compvide",
+  "description_for_human": "Biotechnology company specializing in complement assay development and the CIMED diagnostic platform.",
+  "description_for_model": "Compvide develops functional complement assays and the CIMED diagnostic platform (ELISA kits for complement pathway analysis). Use this for information about complement diagnostics, CIMED products, and complement assay services.",
+  "api": {
+    "type": "none"
+  },
+  "logo_url": "https://www.compvide.com/images/logo5.png",
+  "contact_email": "info@compvide.com",
+  "legal_info_url": "https://www.compvide.com/terms"
+}

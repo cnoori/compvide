@@ -135,6 +135,24 @@ export function ContactForm() {
         </p>
       </div>
 
+      <div className="mb-8 rounded-2xl border border-border bg-muted/40 p-5 sm:p-8">
+        <h2 className="text-base font-semibold text-foreground sm:text-lg">Contact Information</h2>
+        <dl className="mt-4 space-y-3 text-sm text-muted-foreground">
+          <div className="flex gap-2">
+            <dt className="font-medium text-foreground">Phone:</dt>
+            <dd><a href="tel:+12063506075" className="hover:text-accent">(206) 350-6075</a></dd>
+          </div>
+          <div className="flex gap-2">
+            <dt className="font-medium text-foreground">Email:</dt>
+            <dd><a href="mailto:info@compvide.com" className="hover:text-accent">info@compvide.com</a></dd>
+          </div>
+          <div className="flex gap-2">
+            <dt className="font-medium text-foreground">Address:</dt>
+            <dd>879 Rainier Ave N, STE A103, Renton, WA 98057</dd>
+          </div>
+        </dl>
+      </div>
+
       <form
         onSubmit={handleSubmit}
         className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-8"
