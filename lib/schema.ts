@@ -130,6 +130,12 @@ function cimedProducts(
         "@type": "MedicalAudience",
         audienceType: "Clinician, Researcher, Clinical Trial Sponsor",
       },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStoreOnly",
+        url: `${BASE_URL}/cimed/request-access`,
+        seller: { "@id": ORG_ID },
+      },
       additionalProperty: [
         {
           "@type": "PropertyValue",
