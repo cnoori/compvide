@@ -26,10 +26,10 @@ const organization = {
     "Compvide is a biotechnology company specializing in functional complement assays, biomarker programs, and clinical-study sample analysis for translational research and therapeutic development. Compvide is the manufacturer of the CIMED diagnostic platform.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "879 Rainier Ave N, STE A103",
-    addressLocality: "Renton",
+    streetAddress: " 330 Yale Avenue North, Suite 520,",
+    addressLocality: "Seattle",
     addressRegion: "WA",
-    postalCode: "98057",
+    postalCode: "98109",
     addressCountry: "US",
   },
   telephone: "+12063506075",
@@ -105,9 +105,7 @@ const PATHWAY_NAMES: Record<string, string> = {
   LP: "Lectin Pathway",
 };
 
-function cimedProducts(
-  products: { name: string; description: string }[],
-) {
+function cimedProducts(products: { name: string; description: string }[]) {
   return products.map((product) => {
     const pathwayCode = product.name.replace("CIMED-", "");
     const pathwayName = PATHWAY_NAMES[pathwayCode] ?? pathwayCode;

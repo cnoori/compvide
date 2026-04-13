@@ -131,16 +131,16 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="https://maps.google.com/?q=879+Rainier+Ave+N,+STE+A103,+Renton+WA+98057"
+                  href="https://www.google.com/maps/place/330+Yale+Ave+N+%23520,+Seattle,+WA+98109/@47.6217466,-122.3326273,17z"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 transition-colors hover:text-accent"
                 >
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                   <span>
-                    879 Rainier Ave N, STE A103,
+                    330 Yale Avenue North, Suite 520,
                     <br />
-                    Renton WA 98057
+                    Seattle, WA 98109
                   </span>
                 </a>
 

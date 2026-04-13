@@ -1,59 +1,59 @@
-"use client"
+"use client";
 
-import React from "react"
+import React from "react";
 
-import { useState } from "react"
-import { CheckCircle2, Loader2, Send, ArrowLeft } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react";
+import { CheckCircle2, Loader2, Send, ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { sendContactEmail } from "@/app/actions/send-email"
+} from "@/components/ui/select";
+import { sendContactEmail } from "@/app/actions/send-email";
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [error, setError] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [company, setCompany] = useState("")
-  const [product, setProduct] = useState("")
-  const [message, setMessage] = useState("")
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
+  const [product, setProduct] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   function validate() {
-    const newErrors: Record<string, string> = {}
-    if (!firstName.trim()) newErrors.firstName = "First name is required"
-    if (!lastName.trim()) newErrors.lastName = "Last name is required"
-    if (!email.trim()) newErrors.email = "Email is required"
+    const newErrors: Record<string, string> = {};
+    if (!firstName.trim()) newErrors.firstName = "First name is required";
+    if (!lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!email.trim()) newErrors.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      newErrors.email = "Please enter a valid email address"
-    if (!phone.trim()) newErrors.phone = "Phone number is required"
+      newErrors.email = "Please enter a valid email address";
+    if (!phone.trim()) newErrors.phone = "Phone number is required";
     else if (!/^[\d\s\-+()]{7,20}$/.test(phone))
-      newErrors.phone = "Please enter a valid phone number"
-    if (!message.trim()) newErrors.message = "Please enter a message"
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+      newErrors.phone = "Please enter a valid phone number";
+    if (!message.trim()) newErrors.message = "Please enter a message";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   }
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setError("")
-    if (!validate()) return
+    e.preventDefault();
+    setError("");
+    if (!validate()) return;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
       const result = await sendContactEmail({
         firstName,
@@ -63,16 +63,16 @@ export function ContactForm() {
         company,
         product,
         message,
-      })
+      });
       if (result.success) {
-        setIsSubmitted(true)
+        setIsSubmitted(true);
       } else {
-        setError(result.error || "Something went wrong. Please try again.")
+        setError(result.error || "Something went wrong. Please try again.");
       }
     } catch {
-      setError("Something went wrong. Please try again.")
+      setError("Something went wrong. Please try again.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
@@ -86,7 +86,8 @@ export function ContactForm() {
           Thank You for Reaching Out!
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-          We have received your message and our team will review it promptly. You can expect to hear back from us within{" "}
+          We have received your message and our team will review it promptly.
+          You can expect to hear back from us within{" "}
           <strong className="text-foreground">2 business days</strong>.
         </p>
         <p className="mt-3 text-sm text-muted-foreground">
@@ -103,25 +104,25 @@ export function ContactForm() {
           <Button
             variant="ghost"
             onClick={() => {
-              setIsSubmitted(false)
-              setFirstName("")
-              setLastName("")
-              setEmail("")
-              setPhone("")
-              setCompany("")
-              setProduct("")
-              setMessage("")
-              setErrors({})
+              setIsSubmitted(false);
+              setFirstName("");
+              setLastName("");
+              setEmail("");
+              setPhone("");
+              setCompany("");
+              setProduct("");
+              setMessage("");
+              setErrors({});
             }}
           >
             Send Another Message
           </Button>
         </div>
       </div>
-    )
+    );
   }
 
-  const fieldClass = "mt-1.5 bg-background dark:bg-secondary/50 border-border"
+  const fieldClass = "mt-1.5 bg-background dark:bg-secondary/50 border-border";
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-10 sm:py-16">
@@ -130,25 +131,35 @@ export function ContactForm() {
           Contact Us
         </h1>
         <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-          Have a question about our services, platform, or partnership opportunities?
-          Fill out the form below and we will get back to you.
+          Have a question about our services, platform, or partnership
+          opportunities? Fill out the form below and we will get back to you.
         </p>
       </div>
 
       <div className="mb-8 rounded-2xl border border-border bg-muted/40 p-5 sm:p-8">
-        <h2 className="text-base font-semibold text-foreground sm:text-lg">Contact Information</h2>
+        <h2 className="text-base font-semibold text-foreground sm:text-lg">
+          Contact Information
+        </h2>
         <dl className="mt-4 space-y-3 text-sm text-muted-foreground">
           <div className="flex gap-2">
             <dt className="font-medium text-foreground">Phone:</dt>
-            <dd><a href="tel:+12063506075" className="hover:text-accent">(206) 350-6075</a></dd>
+            <dd>
+              <a href="tel:+12063506075" className="hover:text-accent">
+                (206) 350-6075
+              </a>
+            </dd>
           </div>
           <div className="flex gap-2">
             <dt className="font-medium text-foreground">Email:</dt>
-            <dd><a href="mailto:info@compvide.com" className="hover:text-accent">info@compvide.com</a></dd>
+            <dd>
+              <a href="mailto:info@compvide.com" className="hover:text-accent">
+                info@compvide.com
+              </a>
+            </dd>
           </div>
           <div className="flex gap-2">
             <dt className="font-medium text-foreground">Address:</dt>
-            <dd>879 Rainier Ave N, STE A103, Renton, WA 98057</dd>
+            <dd> 330 Yale Avenue North, Suite 520, Seattle, WA 98109</dd>
           </div>
         </dl>
       </div>
@@ -160,7 +171,10 @@ export function ContactForm() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
           {/* First Name */}
           <div>
-            <Label htmlFor="firstName" className="text-sm font-medium text-card-foreground">
+            <Label
+              htmlFor="firstName"
+              className="text-sm font-medium text-card-foreground"
+            >
               First Name <span className="text-destructive">*</span>
             </Label>
             <Input
@@ -171,13 +185,18 @@ export function ContactForm() {
               className={fieldClass}
             />
             {errors.firstName && (
-              <p className="mt-1 text-xs text-destructive">{errors.firstName}</p>
+              <p className="mt-1 text-xs text-destructive">
+                {errors.firstName}
+              </p>
             )}
           </div>
 
           {/* Last Name */}
           <div>
-            <Label htmlFor="lastName" className="text-sm font-medium text-card-foreground">
+            <Label
+              htmlFor="lastName"
+              className="text-sm font-medium text-card-foreground"
+            >
               Last Name <span className="text-destructive">*</span>
             </Label>
             <Input
@@ -194,7 +213,10 @@ export function ContactForm() {
 
           {/* Email */}
           <div>
-            <Label htmlFor="email" className="text-sm font-medium text-card-foreground">
+            <Label
+              htmlFor="email"
+              className="text-sm font-medium text-card-foreground"
+            >
               Email <span className="text-destructive">*</span>
             </Label>
             <Input
@@ -212,7 +234,10 @@ export function ContactForm() {
 
           {/* Phone */}
           <div>
-            <Label htmlFor="phone" className="text-sm font-medium text-card-foreground">
+            <Label
+              htmlFor="phone"
+              className="text-sm font-medium text-card-foreground"
+            >
               Phone <span className="text-destructive">*</span>
             </Label>
             <Input
@@ -231,7 +256,10 @@ export function ContactForm() {
 
         {/* Company */}
         <div className="mt-5 sm:mt-6">
-          <Label htmlFor="company" className="text-sm font-medium text-card-foreground">
+          <Label
+            htmlFor="company"
+            className="text-sm font-medium text-card-foreground"
+          >
             Company / Institution
           </Label>
           <Input
@@ -249,18 +277,36 @@ export function ContactForm() {
             Product / Service Interest
           </Label>
           <Select value={product} onValueChange={setProduct}>
-            <SelectTrigger className={`mt-1.5 bg-background dark:bg-secondary/50 border-border`}>
+            <SelectTrigger
+              className={`mt-1.5 bg-background dark:bg-secondary/50 border-border`}
+            >
               <SelectValue placeholder="What are you interested in?" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="cimed-platform">CIMED Diagnostic Platform</SelectItem>
-              <SelectItem value="cimed-ap">CIMED-AP (Alternative Pathway)</SelectItem>
-              <SelectItem value="cimed-cp">CIMED-CP (Classical Pathway)</SelectItem>
-              <SelectItem value="cimed-lp">CIMED-LP (Lectin Pathway)</SelectItem>
-              <SelectItem value="assay-development">Custom Assay Development</SelectItem>
-              <SelectItem value="biological-samples">Biological Samples</SelectItem>
-              <SelectItem value="clinical-studies">Clinical Study Support</SelectItem>
-              <SelectItem value="biomarker-programs">Biomarker Programs</SelectItem>
+              <SelectItem value="cimed-platform">
+                CIMED Diagnostic Platform
+              </SelectItem>
+              <SelectItem value="cimed-ap">
+                CIMED-AP (Alternative Pathway)
+              </SelectItem>
+              <SelectItem value="cimed-cp">
+                CIMED-CP (Classical Pathway)
+              </SelectItem>
+              <SelectItem value="cimed-lp">
+                CIMED-LP (Lectin Pathway)
+              </SelectItem>
+              <SelectItem value="assay-development">
+                Custom Assay Development
+              </SelectItem>
+              <SelectItem value="biological-samples">
+                Biological Samples
+              </SelectItem>
+              <SelectItem value="clinical-studies">
+                Clinical Study Support
+              </SelectItem>
+              <SelectItem value="biomarker-programs">
+                Biomarker Programs
+              </SelectItem>
               <SelectItem value="general-inquiry">General Inquiry</SelectItem>
             </SelectContent>
           </Select>
@@ -268,7 +314,10 @@ export function ContactForm() {
 
         {/* Message */}
         <div className="mt-5 sm:mt-6">
-          <Label htmlFor="message" className="text-sm font-medium text-card-foreground">
+          <Label
+            htmlFor="message"
+            className="text-sm font-medium text-card-foreground"
+          >
             Message <span className="text-destructive">*</span>
           </Label>
           <Textarea
@@ -310,5 +359,5 @@ export function ContactForm() {
         </Button>
       </form>
     </div>
-  )
+  );
 }
